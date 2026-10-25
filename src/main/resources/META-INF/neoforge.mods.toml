@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="GPL-3.0"
+
+[[mods]]
+modId = "immersivefabrication"
+version = "${version}"
+displayName = "Immersive Fabrication"
+description = "A multiblock mod as a base for mods utilizing Immersive Convergence."
+authors = "tgstyle"
+
+[[dependencies.immersivefabrication]]
+modId="neoforge"
+mandatory=true
+versionRange="[${version_neoforge_min},)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.immersivefabrication]]
+modId="minecraft"
+mandatory=true
+versionRange="[${version_mc}]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.immersivefabrication]]
+modId="immersiveconvergence"
+mandatory=true
+versionRange="${version_ic}"
+ordering="NONE"
+side="BOTH"

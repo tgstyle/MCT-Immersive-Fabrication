@@ -1,0 +1,14 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url = 'https://ldtteam.jfrog.io/artifactory/parchmentmc-public/' }
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.9.0'
+}
+
+rootProject.name = 'MCT-Immersive-Fabrication'
