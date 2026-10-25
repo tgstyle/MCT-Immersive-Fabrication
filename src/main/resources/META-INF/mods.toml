@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="${mod_license}"
+
+[[mods]]
+modId = "immersivefabrication"
+version = "${version}"
+displayName = "${mod_name}"
+description = "${mod_description}"
+authors = "${mod_authors}"
+
+[[dependencies.immersivefabrication]]
+modId="forge"
+mandatory=true
+versionRange="[${version_forge_min},)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.immersivefabrication]]
+modId="minecraft"
+mandatory=true
+versionRange="[${version_mc}]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.immersivefabrication]]
+modId="immersiveconvergence"
+mandatory=true
+versionRange="${version_ic}"
+ordering="NONE"
+side="BOTH"

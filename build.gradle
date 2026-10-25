@@ -1,0 +1,146 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.140'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.6'
+    id 'eclipse'
+}
+
+configurations.configureEach {
+    resolutionStrategy {
+        force 'com.google.guava:guava:32.1.3-jre'
+    }
+}
+
+def versionProps = new Properties()
+file('version.properties').withInputStream { versionProps.load(it) }
+
+def gradleProps = new Properties()
+file('gradle.properties').withInputStream { gradleProps.load(it) }
+
+version = versionProps.getProperty('version')
+ext.version_buildnumber = versionProps.getProperty('build_number')?.toInteger() ?: 0
+ext.stage = versionProps.getProperty('stage') ?: ''
+
+group = 'mctmods.immersivefabrication'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+tasks.withType(Jar).configureEach {
+    zip64 = true
+    archiveVersion.set("${version}-b${version_buildnumber}-${stage}")
+}
+
+ext {
+    mod_id = gradleProps['mod_id']
+    version_minecraft = versionProps['version_mc']
+    version_forge = versionProps['version_forge']
+    version_forge_min = versionProps['version_forge_min']
+    version_parchment = versionProps['version_parchment']
+    version_ic = versionProps['version_ic']
+    version_ic_curse = versionProps['version_ic_curse']
+    mod_license = gradleProps['mod_license']
+    mod_name = gradleProps['mod_name']
+    mod_authors = gradleProps['mod_authors']
+    mod_description = gradleProps['mod_description']
+}
+
+def version_replaces = { [
+        'version'      : project.version,
+        'build_number' : version_buildnumber,
+        'version_mc'   : version_minecraft,
+        'version_forge': version_forge,
+        'version_forge_min': version_forge_min,
+        'mod_id'       : mod_id,
+        'mod_license'  : mod_license,
+        'mod_name'     : mod_name,
+        'mod_authors'  : mod_authors,
+        'mod_description': mod_description,
+        'version_ic'   : version_ic,
+        'stage'        : stage,
+] as Map<String, Object> }
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.FAIL
+    inputs.properties(version_replaces())
+    filesMatching(["META-INF/mods.toml", "pack.mcmeta"]) {
+        expand version_replaces()
+    }
+}
+
+def devSyncScript = null
+for (def dir = rootDir; dir != null && devSyncScript == null; dir = dir.parentFile) {
+    def candidate = new File(dir, '#scripts/mods-devsync.gradle')
+    if (candidate.isFile()) { devSyncScript = candidate }
+}
+if (devSyncScript != null) { apply from: devSyncScript }
+
+def icJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('ImmersiveConvergence', versionProps['devsync_ic']), 'build/devsync-pins/ImmersiveConvergence.jar')
+if (icJar == null) { logger.warn('No IC devSync pin: set devsync_ic in version.properties to a snapshot in the devsync cache; falling back to CurseMaven') }
+
+legacyForge {
+    version = "${version_minecraft}-${version_forge}"
+
+    parchment {
+        mappingsVersion = project.version_parchment
+        minecraftVersion = project.version_minecraft
+    }
+
+    mods {
+        register(mod_id.toString()) { net.neoforged.moddevgradle.dsl.ModModel mod ->
+            mod.modSourceSets.add(sourceSets.main)
+        }
+    }
+
+    runs {
+        configureEach {
+            jvmArgument '-Xmx4G'
+            gameDirectory = layout.projectDirectory.dir('run')
+        }
+        client {
+            client()
+            sourceSet = sourceSets.main
+            systemProperty 'forge.logging.markers', ''
+            programArguments.addAll '--username', 'tgstyle', '--width', '1920', '--height', '1080'
+        }
+        server {
+            server()
+            sourceSet = sourceSets.main
+            systemProperty 'forge.logging.markers', ''
+            programArguments.addAll '--nogui'
+        }
+    }
+}
+
+repositories {
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    maven {
+        url = 'https://www.cursemaven.com'
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url = "https://cfa2.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        name = 'ParchmentMC'
+        url = 'https://ldtteam.jfrog.io/artifactory/parchmentmc-public/'
+    }
+}
+
+dependencies {
+    if (icJar != null) {
+        implementation files(icJar)
+    } else {
+        modImplementation "curse.maven:${version_ic_curse}"
+    }
+}
+
+jar {
+    archiveBaseName.set("MCT-ImmersiveFabrication-${version_minecraft}")
+    archiveClassifier.set('')
+}
