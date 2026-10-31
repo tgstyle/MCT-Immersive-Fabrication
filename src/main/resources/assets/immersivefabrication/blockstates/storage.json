@@ -1,0 +1,24 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "cube_all"},
+	"variants": {
+		"inventory,type=copper": [{"textures": {"all": "immersivefabrication:blocks/metal/copper"}}],
+		"inventory,type=aluminum": [{"textures": {"all": "immersivefabrication:blocks/metal/aluminum"}}],
+		"inventory,type=lead": [{"textures": {"all": "immersivefabrication:blocks/metal/lead"}}],
+		"inventory,type=silver": [{"textures": {"all": "immersivefabrication:blocks/metal/silver"}}],
+		"inventory,type=nickel": [{"textures": {"all": "immersivefabrication:blocks/metal/nickel"}}],
+		"inventory,type=uranium": [{"textures": {"end": "immersivefabrication:blocks/metal/uranium_top", "side": "immersivefabrication:blocks/metal/uranium_side"}, "model": "cube_column"}],
+		"inventory,type=constantan": [{"textures": {"all": "immersivefabrication:blocks/metal/constantan"}}],
+		"inventory,type=steel": [{"textures": {"all": "immersivefabrication:blocks/metal/steel"}}],
+		"type": {
+			"copper": {"textures": {"all": "immersivefabrication:blocks/metal/copper"}},
+			"aluminum": {"textures": {"all": "immersivefabrication:blocks/metal/aluminum"}},
+			"lead": {"textures": {"all": "immersivefabrication:blocks/metal/lead"}},
+			"silver": {"textures": {"all": "immersivefabrication:blocks/metal/silver"}},
+			"nickel": {"textures": {"all": "immersivefabrication:blocks/metal/nickel"}},
+			"uranium": {"textures": {"end": "immersivefabrication:blocks/metal/uranium_top", "side": "immersivefabrication:blocks/metal/uranium_side"}, "model": "cube_column"},
+			"constantan": {"textures": {"all": "immersivefabrication:blocks/metal/constantan"}},
+			"steel": {"textures": {"all": "immersivefabrication:blocks/metal/steel"}}
+		}
+	}
+}

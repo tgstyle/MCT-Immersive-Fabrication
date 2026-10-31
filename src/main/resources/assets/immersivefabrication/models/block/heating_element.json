@@ -1,0 +1,13 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"heater": "immersivefabrication:blocks/metal/heating_element",
+		"particle": "immersivefabrication:blocks/metal/heating_element",
+		"down": "#heater",
+		"up": "#heater",
+		"north": "immersivefabrication:blocks/metal/heating_element_socket",
+		"south": "#heater",
+		"west": "#heater",
+		"east": "#heater"
+	}
+}

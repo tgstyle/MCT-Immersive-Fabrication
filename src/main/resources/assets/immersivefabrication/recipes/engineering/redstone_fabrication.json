@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["IRI","RCR","IRI"],"key":{"I":{"type":"forge:ore_dict","ore":"ingotIron"},"C":{"type":"forge:ore_dict","ore":"ingotCopper"},"R":{"type":"forge:ore_dict","ore":"dustRedstone"}},"result":{"item":"immersivefabrication:metal_decoration","data":5,"count":2}}

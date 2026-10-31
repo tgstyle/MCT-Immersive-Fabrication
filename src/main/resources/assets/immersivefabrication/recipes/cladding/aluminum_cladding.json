@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["PP","PP"],"key":{"P":{"type":"forge:ore_dict","ore":"plateAluminum"}},"result":{"item":"immersivefabrication:cladding","data":1,"count":4}}

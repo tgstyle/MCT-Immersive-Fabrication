@@ -1,0 +1,8 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "fence_inventory"},
+	"variants": {
+		"inventory,type=steel": [{"textures": {"texture": "immersivefabrication:blocks/metal/steel"}}],
+		"inventory,type=aluminum": [{"textures": {"texture": "immersivefabrication:blocks/metal/aluminum"}}]
+	}
+}

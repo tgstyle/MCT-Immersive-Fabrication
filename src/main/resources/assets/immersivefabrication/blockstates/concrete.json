@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "cube_all"},
+	"variants": {
+		"inventory,type=concrete": [{"textures": {"all": "immersivefabrication:blocks/stone/concrete"}}],
+		"inventory,type=flaxcrete": [{"textures": {"all": "immersivefabrication:blocks/stone/flaxcrete"}}],
+		"type": {
+			"concrete": {"textures": {"all": "immersivefabrication:blocks/stone/concrete"}},
+			"flaxcrete": {"textures": {"all": "immersivefabrication:blocks/stone/flaxcrete"}}
+		}
+	}
+}

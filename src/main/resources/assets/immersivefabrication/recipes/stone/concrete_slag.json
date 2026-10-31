@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["SCS","GBG","SCS"],"key":{"C":{"item":"minecraft:clay_ball","data":0},"S":{"type":"forge:ore_dict","ore":"itemSlag"},"G":{"item":"minecraft:gravel","data":0},"B":{"item":"minecraft:water_bucket","data":0}},"result":{"item":"immersivefabrication:concrete","data":0,"count":12}}

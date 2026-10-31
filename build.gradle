@@ -36,7 +36,7 @@ file('gradle.properties').withInputStream { gradleProps.load(it) }
 
 def devSyncScript = null
 for (def dir = rootDir; dir != null && devSyncScript == null; dir = dir.parentFile) {
-    def candidate = new File(dir, '#scripts/mods-devsync.gradle')
+    def candidate = new File(dir, '#scripts/gradle/mods-devsync.gradle')
     if (candidate.isFile()) { devSyncScript = candidate }
 }
 if (devSyncScript != null) {
@@ -46,6 +46,12 @@ if (devSyncScript != null) {
 
 def icJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('ImmersiveConvergence-Legacy', versionProps['devsync_ic']), 'build/devsync-pins/ImmersiveConvergence-Legacy.jar')
 if (icJar == null) { logger.warn('No Immersive Convergence devSync pin: set devsync_ic in version.properties to a snapshot in the devsync cache') }
+
+def itJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('MCT-Immersive-Technology-Legacy', versionProps['devsync_it']), 'build/devsync-pins/MCT-Immersive-Technology-Legacy.jar')
+if (itJar == null) { logger.warn('No IT devSync pin: set devsync_it in version.properties to a snapshot in the devsync cache') }
+
+boolean companion(String key) { return (findProperty('companions') ?: '').toString().split(',').contains(key) }
+def ifJar = devSyncScript == null || !companion('immersivefixes') ? null : devSyncStaged(devSyncPin('Immersive-Fixes-Legacy', versionProps['devsync_if']), 'build/devsync-pins/Immersive-Fixes-Legacy.jar')
 
 def stampInputs = files(sourceSets.main.java.srcDirs, sourceSets.main.resources.srcDirs, file('build.gradle'), file('gradle.properties'), configFile, icJar == null ? [] : icJar).asFileTree
 def stampProps = file('version.properties')
@@ -95,12 +101,13 @@ minecraft {
     username = 'TGstyle'
     extraRunJvmArguments.addAll(
             '-Xmx4G',
-            '-Dfml.coreMods.load=com.immersiveconvergence.core.ICMixin',
+            '-Dfml.coreMods.load=mctmods.immersivetechnology.core.MCTMixin,com.immersiveconvergence.core.ICMixin',
             '-Dforge.logging.console.level=debug'
     )
 }
 
 repositories {
+    maven { url = 'https://maven.blamejared.com' ; content { includeGroup 'mezz.jei' } }
     maven {
         url = "https://cursemaven.com"
         content { includeGroup "curse.maven" }
@@ -112,17 +119,33 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    clientRuntime {
+        canBeConsumed = false
+        canBeResolved = true
+    }
+}
+
 dependencies {
     if (icJar != null) {
         implementation files(icJar)
     } else {
         implementation(rfg.deobf("curse.maven:${common.imco_version}") as String)
     }
+    if (itJar != null) {
+        runtimeOnly files(itJar)
+    }
+    if (ifJar != null) { runtimeOnly files(ifJar) }
+    runtimeOnly(rfg.deobf("${common.mjei_version}") as String)
+    runtimeOnly(rfg.deobf("curse.maven:${common.imme_version}") as String)
     runtimeOnly('zone.rong:mixinbooter:10.7') { transitive = false }
+    clientRuntime(rfg.deobf("curse.maven:${common.mtop_version}") as String)
+    clientRuntime(rfg.deobf("curse.maven:${common.hwya_version}") as String)
 }
 
 tasks.named('runClient').configure {
     extraArgs.addAll('--width', '1920', '--height', '1080')
+    classpath configurations.clientRuntime
 }
 
 tasks.named('runServer').configure {

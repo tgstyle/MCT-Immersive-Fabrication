@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["HHH","HSH","HHH"],"key":{"H":{"item":"immersivefabrication:material","data":0},"S":{"type":"forge:ore_dict","ore":"stickWood"}},"result":{"item":"immersivefabrication:material","data":1}}

@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["BBB"],"key":{"B":{"type":"forge:ore_dict","ore":"blockSheetmetalGold"}},"result":{"item":"immersivefabrication:cladding_slab","data":9,"count":6}}

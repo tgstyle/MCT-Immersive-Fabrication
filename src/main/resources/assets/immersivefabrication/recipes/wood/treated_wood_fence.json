@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["WSW","WSW"],"key":{"W":{"type":"forge:ore_dict","ore":"plankTreatedWood"},"S":{"type":"forge:ore_dict","ore":"stickTreatedWood"}},"result":{"item":"immersivefabrication:treated_wood_fence","data":0,"count":3}}

@@ -1,0 +1,28 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "half_slab"},
+	"variants": {
+		"inventory,type=copper": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_copper", "top": "immersivefabrication:blocks/metal/cladding_copper", "side": "immersivefabrication:blocks/metal/cladding_copper"}}],
+		"inventory,type=aluminum": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_aluminum", "top": "immersivefabrication:blocks/metal/cladding_aluminum", "side": "immersivefabrication:blocks/metal/cladding_aluminum"}}],
+		"inventory,type=lead": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_lead", "top": "immersivefabrication:blocks/metal/cladding_lead", "side": "immersivefabrication:blocks/metal/cladding_lead"}}],
+		"inventory,type=silver": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_silver", "top": "immersivefabrication:blocks/metal/cladding_silver", "side": "immersivefabrication:blocks/metal/cladding_silver"}}],
+		"inventory,type=nickel": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_nickel", "top": "immersivefabrication:blocks/metal/cladding_nickel", "side": "immersivefabrication:blocks/metal/cladding_nickel"}}],
+		"inventory,type=uranium": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_uranium", "top": "immersivefabrication:blocks/metal/cladding_uranium", "side": "immersivefabrication:blocks/metal/cladding_uranium"}}],
+		"inventory,type=constantan": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_constantan", "top": "immersivefabrication:blocks/metal/cladding_constantan", "side": "immersivefabrication:blocks/metal/cladding_constantan"}}],
+		"inventory,type=steel": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_steel", "top": "immersivefabrication:blocks/metal/cladding_steel", "side": "immersivefabrication:blocks/metal/cladding_steel"}}],
+		"inventory,type=iron": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_iron", "top": "immersivefabrication:blocks/metal/cladding_iron", "side": "immersivefabrication:blocks/metal/cladding_iron"}}],
+		"inventory,type=gold": [{"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_gold", "top": "immersivefabrication:blocks/metal/cladding_gold", "side": "immersivefabrication:blocks/metal/cladding_gold"}}],
+		"type": {
+			"copper": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_copper", "top": "immersivefabrication:blocks/metal/cladding_copper", "side": "immersivefabrication:blocks/metal/cladding_copper"}},
+			"aluminum": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_aluminum", "top": "immersivefabrication:blocks/metal/cladding_aluminum", "side": "immersivefabrication:blocks/metal/cladding_aluminum"}},
+			"lead": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_lead", "top": "immersivefabrication:blocks/metal/cladding_lead", "side": "immersivefabrication:blocks/metal/cladding_lead"}},
+			"silver": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_silver", "top": "immersivefabrication:blocks/metal/cladding_silver", "side": "immersivefabrication:blocks/metal/cladding_silver"}},
+			"nickel": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_nickel", "top": "immersivefabrication:blocks/metal/cladding_nickel", "side": "immersivefabrication:blocks/metal/cladding_nickel"}},
+			"uranium": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_uranium", "top": "immersivefabrication:blocks/metal/cladding_uranium", "side": "immersivefabrication:blocks/metal/cladding_uranium"}},
+			"constantan": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_constantan", "top": "immersivefabrication:blocks/metal/cladding_constantan", "side": "immersivefabrication:blocks/metal/cladding_constantan"}},
+			"steel": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_steel", "top": "immersivefabrication:blocks/metal/cladding_steel", "side": "immersivefabrication:blocks/metal/cladding_steel"}},
+			"iron": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_iron", "top": "immersivefabrication:blocks/metal/cladding_iron", "side": "immersivefabrication:blocks/metal/cladding_iron"}},
+			"gold": {"textures": {"bottom": "immersivefabrication:blocks/metal/cladding_gold", "top": "immersivefabrication:blocks/metal/cladding_gold", "side": "immersivefabrication:blocks/metal/cladding_gold"}}
+		}
+	}
+}

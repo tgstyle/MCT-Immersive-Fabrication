@@ -1,0 +1,1 @@
+{"conditions":[{"type":"immersivefabrication:wires_enabled"}],"type":"minecraft:crafting_shaped","pattern":["FCF","CFC","FCF"],"key":{"F":{"item":"immersivefabrication:material","data":1},"C":{"item":"immersivefabrication:spool","data":0}},"result":{"item":"immersivefabrication:spool","data":1,"count":4}}

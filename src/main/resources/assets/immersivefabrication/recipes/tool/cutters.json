@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["SI"," S"],"key":{"I":{"type":"forge:ore_dict","ore":"ingotIron"},"S":{"type":"forge:ore_dict","ore":"stickWood"}},"result":{"item":"immersivefabrication:cutters","data":0}}

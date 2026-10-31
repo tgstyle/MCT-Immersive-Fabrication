@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["SB","BS"],"key":{"S":{"type":"forge:ore_dict","ore":"sandstone"},"B":{"type":"forge:ore_dict","ore":"ingotBrick"}},"result":{"item":"immersivefabrication:stone_decoration","data":3,"count":2}}

@@ -1,0 +1,1 @@
+{"type":"forge:ore_shapeless","group":"immersivefabrication:fluid_pipe_dye","ingredients":[{"item":"immersivefabrication:structure","data":0},{"type":"forge:ore_dict","ore":"dyeLightGray"}],"result":{"item":"immersivefabrication:structure","data":0}}

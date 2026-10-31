@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["CCC","HHH","CCC"],"key":{"C":{"item":"minecraft:clay_ball","data":0},"H":{"item":"immersivefabrication:material","data":0}},"result":{"item":"immersivefabrication:concrete","data":1,"count":6}}

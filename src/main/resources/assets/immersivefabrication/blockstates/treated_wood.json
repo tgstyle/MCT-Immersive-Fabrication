@@ -1,0 +1,14 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "cube_all"},
+	"variants": {
+		"inventory,type=horizontal": [{"textures": {"all": "immersivefabrication:blocks/wooden/treated_wood_horizontal"}}],
+		"inventory,type=vertical": [{"textures": {"all": "immersivefabrication:blocks/wooden/treated_wood_vertical"}}],
+		"inventory,type=packaged": [{"textures": {"all": "immersivefabrication:blocks/wooden/treated_wood_packaged"}}],
+		"type": {
+			"horizontal": {"textures": {"all": "immersivefabrication:blocks/wooden/treated_wood_horizontal"}},
+			"vertical": {"textures": {"all": "immersivefabrication:blocks/wooden/treated_wood_vertical"}},
+			"packaged": {"textures": {"all": "immersivefabrication:blocks/wooden/treated_wood_packaged"}}
+		}
+	}
+}

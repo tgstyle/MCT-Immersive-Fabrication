@@ -1,0 +1,1 @@
+{"conditions":[{"type":"immersivefabrication:wires_enabled"}],"type":"minecraft:crafting_shaped","pattern":[" I ","ISI"," I "],"key":{"I":{"type":"forge:ore_dict","ore":"wireCopper"},"S":{"item":"immersivefabrication:rod","data":0}},"result":{"item":"immersivefabrication:spool","data":0,"count":4}}

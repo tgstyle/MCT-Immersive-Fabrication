@@ -1,0 +1,18 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "cube_all"},
+	"variants": {
+		"inventory,type=coke_brick": [{"textures": {"all": "immersivefabrication:blocks/stone/cokebrick"}}],
+		"inventory,type=blast_brick": [{"textures": {"all": "immersivefabrication:blocks/stone/blastbrick"}}],
+		"inventory,type=blast_brick_reinforced": [{"textures": {"all": "immersivefabrication:blocks/stone/blastbrick_reinforced"}}],
+		"inventory,type=alloy_brick": [{"textures": {"all": "immersivefabrication:blocks/stone/alloybrick"}}],
+		"inventory,type=coal_coke": [{"textures": {"all": "immersivefabrication:blocks/coke"}}],
+		"type": {
+			"coke_brick": {"textures": {"all": "immersivefabrication:blocks/stone/cokebrick"}},
+			"blast_brick": {"textures": {"all": "immersivefabrication:blocks/stone/blastbrick"}},
+			"blast_brick_reinforced": {"textures": {"all": "immersivefabrication:blocks/stone/blastbrick_reinforced"}},
+			"alloy_brick": {"textures": {"all": "immersivefabrication:blocks/stone/alloybrick"}},
+			"coal_coke": {"textures": {"all": "immersivefabrication:blocks/coke"}}
+		}
+	}
+}

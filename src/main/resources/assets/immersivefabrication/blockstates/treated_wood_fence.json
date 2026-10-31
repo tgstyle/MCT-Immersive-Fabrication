@@ -1,0 +1,7 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "fence_inventory"},
+	"variants": {
+		"inventory,type=treated_wood": [{"textures": {"texture": "immersivefabrication:blocks/wooden/treated_wood_horizontal"}}]
+	}
+}

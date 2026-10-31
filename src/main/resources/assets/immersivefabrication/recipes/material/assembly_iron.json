@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["I I"," C ","I I"],"key":{"I":{"type":"forge:ore_dict","ore":"plateIron"},"C":{"type":"forge:ore_dict","ore":"ingotCopper"}},"result":{"item":"immersivefabrication:material","data":4}}

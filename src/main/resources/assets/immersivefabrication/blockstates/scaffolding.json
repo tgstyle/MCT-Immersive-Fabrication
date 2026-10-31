@@ -1,0 +1,20 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "immersivefabrication:scaffolding"},
+	"variants": {
+		"inventory,type=steel_standard": [{"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_steel", "top": "immersivefabrication:blocks/metal/scaffolding_steel", "side": "immersivefabrication:blocks/metal/scaffolding_steel"}}],
+		"inventory,type=steel_grate_top": [{"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_steel", "top": "immersivefabrication:blocks/metal/scaffolding_steel_grate_top", "side": "immersivefabrication:blocks/metal/scaffolding_steel"}}],
+		"inventory,type=steel_wooden_top": [{"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_steel", "top": "immersivefabrication:blocks/metal/scaffolding_steel_wooden_top", "side": "immersivefabrication:blocks/metal/scaffolding_steel"}}],
+		"inventory,type=aluminum_standard": [{"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_aluminum", "top": "immersivefabrication:blocks/metal/scaffolding_aluminum", "side": "immersivefabrication:blocks/metal/scaffolding_aluminum"}}],
+		"inventory,type=aluminum_grate_top": [{"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_aluminum", "top": "immersivefabrication:blocks/metal/scaffolding_aluminum_grate_top", "side": "immersivefabrication:blocks/metal/scaffolding_aluminum"}}],
+		"inventory,type=aluminum_wooden_top": [{"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_aluminum", "top": "immersivefabrication:blocks/metal/scaffolding_aluminum_wooden_top", "side": "immersivefabrication:blocks/metal/scaffolding_aluminum"}}],
+		"type": {
+			"steel_standard": {"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_steel", "top": "immersivefabrication:blocks/metal/scaffolding_steel", "side": "immersivefabrication:blocks/metal/scaffolding_steel"}},
+			"steel_grate_top": {"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_steel", "top": "immersivefabrication:blocks/metal/scaffolding_steel_grate_top", "side": "immersivefabrication:blocks/metal/scaffolding_steel"}},
+			"steel_wooden_top": {"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_steel", "top": "immersivefabrication:blocks/metal/scaffolding_steel_wooden_top", "side": "immersivefabrication:blocks/metal/scaffolding_steel"}},
+			"aluminum_standard": {"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_aluminum", "top": "immersivefabrication:blocks/metal/scaffolding_aluminum", "side": "immersivefabrication:blocks/metal/scaffolding_aluminum"}},
+			"aluminum_grate_top": {"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_aluminum", "top": "immersivefabrication:blocks/metal/scaffolding_aluminum_grate_top", "side": "immersivefabrication:blocks/metal/scaffolding_aluminum"}},
+			"aluminum_wooden_top": {"textures": {"bottom": "immersivefabrication:blocks/metal/scaffolding_aluminum", "top": "immersivefabrication:blocks/metal/scaffolding_aluminum_wooden_top", "side": "immersivefabrication:blocks/metal/scaffolding_aluminum"}}
+		}
+	}
+}

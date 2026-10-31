@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["P","B"],"key":{"P":{"type":"forge:ore_dict","ore":"plateSteel"},"B":{"item":"immersivefabrication:stone_decoration","data":1}},"result":{"item":"immersivefabrication:stone_decoration","data":2}}

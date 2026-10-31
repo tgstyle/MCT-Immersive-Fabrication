@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["CCC","CCC","CCC"],"key":{"C":{"type":"forge:ore_dict","ore":"fuelCoke"}},"result":{"item":"immersivefabrication:stone_decoration","data":4}}

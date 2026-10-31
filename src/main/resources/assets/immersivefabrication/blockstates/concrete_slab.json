@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "half_slab"},
+	"variants": {
+		"inventory,type=concrete": [{"textures": {"bottom": "immersivefabrication:blocks/stone/concrete", "top": "immersivefabrication:blocks/stone/concrete", "side": "immersivefabrication:blocks/stone/concrete"}}],
+		"inventory,type=flaxcrete": [{"textures": {"bottom": "immersivefabrication:blocks/stone/flaxcrete", "top": "immersivefabrication:blocks/stone/flaxcrete", "side": "immersivefabrication:blocks/stone/flaxcrete"}}],
+		"type": {
+			"concrete": {"textures": {"bottom": "immersivefabrication:blocks/stone/concrete", "top": "immersivefabrication:blocks/stone/concrete", "side": "immersivefabrication:blocks/stone/concrete"}},
+			"flaxcrete": {"textures": {"bottom": "immersivefabrication:blocks/stone/flaxcrete", "top": "immersivefabrication:blocks/stone/flaxcrete", "side": "immersivefabrication:blocks/stone/flaxcrete"}}
+		}
+	}
+}

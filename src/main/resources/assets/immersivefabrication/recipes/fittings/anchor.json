@@ -1,0 +1,1 @@
+{"conditions":[{"type":"immersivefabrication:wires_enabled"}],"type":"minecraft:crafting_shaped","pattern":["ISI","I I"],"key":{"I":{"type":"forge:ore_dict","ore":"ingotSteel"},"S":{"item":"immersivefabrication:rod","data":4}},"result":{"item":"immersivefabrication:anchor","count":8}}

@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["WWW","WCW","WWW"],"key":{"W":{"type":"forge:ore_dict","ore":"plankWood"},"C":{"type":"minecraft:item_nbt","item":"forge:bucketfilled","data":0,"nbt":{"FluidName":"creosote","Amount":1000}}},"result":{"item":"immersivefabrication:treated_wood","data":0,"count":8}}

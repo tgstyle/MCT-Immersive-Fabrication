@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["III","EDE","III"],"key":{"I":{"type":"forge:ore_dict","ore":"ingotSteel"},"E":{"type":"forge:ore_dict","ore":"ingotAluminum"},"D":{"type":"forge:ore_dict","ore":"blockCopper"}},"result":{"item":"immersivefabrication:metal_decoration","data":1,"count":2}}

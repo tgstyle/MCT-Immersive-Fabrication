@@ -1,0 +1,14 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "upper_slab"},
+	"variants": {
+		"inventory,type=horizontal": [{"textures": {"bottom": "immersivefabrication:blocks/wooden/treated_wood_horizontal", "top": "immersivefabrication:blocks/wooden/treated_wood_horizontal", "side": "immersivefabrication:blocks/wooden/treated_wood_horizontal"}}],
+		"inventory,type=vertical": [{"textures": {"bottom": "immersivefabrication:blocks/wooden/treated_wood_vertical", "top": "immersivefabrication:blocks/wooden/treated_wood_vertical", "side": "immersivefabrication:blocks/wooden/treated_wood_vertical"}}],
+		"inventory,type=packaged": [{"textures": {"bottom": "immersivefabrication:blocks/wooden/treated_wood_packaged", "top": "immersivefabrication:blocks/wooden/treated_wood_packaged", "side": "immersivefabrication:blocks/wooden/treated_wood_packaged"}}],
+		"type": {
+			"horizontal": {"textures": {"bottom": "immersivefabrication:blocks/wooden/treated_wood_horizontal", "top": "immersivefabrication:blocks/wooden/treated_wood_horizontal", "side": "immersivefabrication:blocks/wooden/treated_wood_horizontal"}},
+			"vertical": {"textures": {"bottom": "immersivefabrication:blocks/wooden/treated_wood_vertical", "top": "immersivefabrication:blocks/wooden/treated_wood_vertical", "side": "immersivefabrication:blocks/wooden/treated_wood_vertical"}},
+			"packaged": {"textures": {"bottom": "immersivefabrication:blocks/wooden/treated_wood_packaged", "top": "immersivefabrication:blocks/wooden/treated_wood_packaged", "side": "immersivefabrication:blocks/wooden/treated_wood_packaged"}}
+		}
+	}
+}

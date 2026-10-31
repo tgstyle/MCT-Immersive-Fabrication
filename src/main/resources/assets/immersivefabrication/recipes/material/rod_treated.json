@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["W","W"],"key":{"W":{"type":"forge:ore_dict","ore":"plankTreatedWood"}},"result":{"item":"immersivefabrication:rod","data":10,"count":4}}

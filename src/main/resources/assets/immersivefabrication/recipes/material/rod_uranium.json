@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["I","I"],"key":{"I":{"type":"forge:ore_dict","ore":"ingotUranium"}},"result":{"item":"immersivefabrication:rod","data":5,"count":4}}

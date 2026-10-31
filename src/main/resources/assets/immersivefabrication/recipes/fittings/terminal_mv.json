@@ -1,0 +1,1 @@
+{"conditions":[{"type":"immersivefabrication:wires_enabled"}],"type":"minecraft:crafting_shaped","pattern":[" I ","BIB","BIB"],"key":{"I":{"type":"forge:ore_dict","ore":"ingotIron"},"B":{"item":"minecraft:hardened_clay","data":0}},"result":{"item":"immersivefabrication:terminal_mv","count":4}}
