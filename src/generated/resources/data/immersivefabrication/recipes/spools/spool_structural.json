@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:wires/acsr"
+    },
+    "S": {
+      "item": "immersivefabrication:nickel_rod"
+    }
+  },
+  "pattern": [
+    " I ",
+    "ISI",
+    " I "
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersivefabrication:spool_structural"
+  }
+}

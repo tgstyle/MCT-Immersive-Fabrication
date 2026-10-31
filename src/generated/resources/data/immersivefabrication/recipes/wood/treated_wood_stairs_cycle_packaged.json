@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "immersivefabrication:treated_wood_packaged_stairs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "immersivefabrication:treated_wood_horizontal_stairs"
+  }
+}

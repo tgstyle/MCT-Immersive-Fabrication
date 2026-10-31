@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/steel_scaffolding_standard_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/steel_scaffolding_standard"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/steel_scaffolding_standard_slab_top"
+    }
+  }
+}

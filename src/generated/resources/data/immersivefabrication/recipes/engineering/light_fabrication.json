@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "tag": "forge:ingots/copper"
+    },
+    "G": {
+      "item": "immersivefabrication:assembly_iron"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "pattern": [
+    "IGI",
+    "CCC",
+    "IGI"
+  ],
+  "result": {
+    "count": 2,
+    "item": "immersivefabrication:light_fabrication"
+  }
+}

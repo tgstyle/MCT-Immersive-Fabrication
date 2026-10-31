@@ -1,0 +1,22 @@
+{
+  "values": [
+    "immersivefabrication:lead_block",
+    "immersivefabrication:silver_block",
+    "immersivefabrication:nickel_block",
+    "immersivefabrication:uranium_block",
+    "immersivefabrication:constantan_block",
+    "immersivefabrication:steel_block",
+    "immersivefabrication:lead_ore",
+    "immersivefabrication:deepslate_lead_ore",
+    "immersivefabrication:raw_lead_block",
+    "immersivefabrication:silver_ore",
+    "immersivefabrication:deepslate_silver_ore",
+    "immersivefabrication:raw_silver_block",
+    "immersivefabrication:nickel_ore",
+    "immersivefabrication:deepslate_nickel_ore",
+    "immersivefabrication:raw_nickel_block",
+    "immersivefabrication:uranium_ore",
+    "immersivefabrication:deepslate_uranium_ore",
+    "immersivefabrication:raw_uranium_block"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#forge:wires/aluminum",
+    "#forge:wires/copper",
+    "#forge:wires/acsr"
+  ]
+}

@@ -1,8 +1,22 @@
 package mctmods.immersivefabrication;
 
+import com.immersiveconvergence.api.fluid.FluidEntry;
+
+import mctmods.immersivefabrication.core.IFabCommonConfig;
+import mctmods.immersivefabrication.core.IFabWiresCondition;
+import mctmods.immersivefabrication.core.registration.IFabBlockEntities;
+import mctmods.immersivefabrication.core.registration.IFabBlocks;
+import mctmods.immersivefabrication.core.registration.IFabCreativeTabs;
+import mctmods.immersivefabrication.core.registration.IFabFluids;
+import mctmods.immersivefabrication.core.registration.IFabItems;
+import mctmods.immersivefabrication.core.registration.IFabLootModifiers;
+import mctmods.immersivefabrication.core.registration.IFabWireTypes;
+
 import com.mojang.logging.LogUtils;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -14,8 +28,20 @@ public class ImmersiveFabrication {
 
     public ImmersiveFabrication(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+        context.registerConfig(ModConfig.Type.COMMON, IFabCommonConfig.SPEC);
+        CraftingHelper.register(IFabWiresCondition.Serializer.INSTANCE);
+        if (IFabCommonConfig.wires()) { IFabWireTypes.register(); }
+        IFabBlocks.register(modEventBus);
+        IFabBlockEntities.register(modEventBus);
+        IFabItems.register(modEventBus);
+        IFabCreativeTabs.register(modEventBus);
+        IFabFluids.register(modEventBus);
+        IFabLootModifiers.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
     }
 
-    private void commonSetup(FMLCommonSetupEvent event) { LOGGER.info("Immersive Fabrication common setup"); }
+    private void commonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> FluidEntry.registerDispenserBehavior(IFabFluids.ENTRIES));
+        LOGGER.info("Immersive Fabrication common setup");
+    }
 }

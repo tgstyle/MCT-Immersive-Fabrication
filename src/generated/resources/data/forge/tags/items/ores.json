@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#forge:ores/aluminum",
+    "#forge:ores/lead",
+    "#forge:ores/silver",
+    "#forge:ores/nickel",
+    "#forge:ores/uranium"
+  ]
+}

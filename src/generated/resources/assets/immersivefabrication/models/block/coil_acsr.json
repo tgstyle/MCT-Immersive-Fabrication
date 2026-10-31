@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "immersivefabrication:block/metal/coil_acsr_top",
+    "side": "immersivefabrication:block/metal/coil_acsr_side"
+  }
+}

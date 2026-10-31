@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=stage0": {
+      "model": "immersivefabrication:block/flax_stage0"
+    },
+    "type=stage1": {
+      "model": "immersivefabrication:block/flax_stage1"
+    },
+    "type=stage2": {
+      "model": "immersivefabrication:block/flax_stage2"
+    },
+    "type=stage3": {
+      "model": "immersivefabrication:block/flax_stage3"
+    },
+    "type=stage4": {
+      "model": "immersivefabrication:block/flax_stage4"
+    },
+    "type=stage5": {
+      "model": "immersivefabrication:block/flax_stage5"
+    }
+  }
+}

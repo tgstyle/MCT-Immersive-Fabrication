@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "immersivefabrication:steel_scaffolding_grate_top_stairs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "immersivefabrication:steel_scaffolding_wooden_top_stairs"
+  }
+}

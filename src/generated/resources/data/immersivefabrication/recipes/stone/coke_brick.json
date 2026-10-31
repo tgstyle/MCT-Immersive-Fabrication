@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "S": {
+      "tag": "forge:sandstone"
+    }
+  },
+  "pattern": [
+    "CBC",
+    "BSB",
+    "CBC"
+  ],
+  "result": {
+    "count": 3,
+    "item": "immersivefabrication:coke_brick"
+  }
+}

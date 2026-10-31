@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#forge:plates/aluminum",
+    "#forge:plates/constantan",
+    "#forge:plates/copper",
+    "#forge:plates/gold",
+    "#forge:plates/graphite",
+    "#forge:plates/iron",
+    "#forge:plates/lead",
+    "#forge:plates/nickel",
+    "#forge:plates/silver",
+    "#forge:plates/steel",
+    "#forge:plates/uranium"
+  ]
+}

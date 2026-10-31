@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/constantan"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "immersivefabrication:constantan_ingot"
+  }
+}

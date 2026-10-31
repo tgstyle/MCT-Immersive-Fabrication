@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "D": {
+      "item": "minecraft:blaze_powder"
+    },
+    "N": {
+      "item": "minecraft:nether_brick"
+    }
+  },
+  "pattern": [
+    "NBN",
+    "BDB",
+    "NBN"
+  ],
+  "result": {
+    "count": 3,
+    "item": "immersivefabrication:blast_brick"
+  }
+}

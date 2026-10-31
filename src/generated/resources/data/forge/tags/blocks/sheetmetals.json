@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#forge:sheetmetals/copper",
+    "#forge:sheetmetals/aluminum",
+    "#forge:sheetmetals/lead",
+    "#forge:sheetmetals/silver",
+    "#forge:sheetmetals/nickel",
+    "#forge:sheetmetals/uranium",
+    "#forge:sheetmetals/constantan",
+    "#forge:sheetmetals/steel",
+    "#forge:sheetmetals/iron",
+    "#forge:sheetmetals/gold"
+  ]
+}

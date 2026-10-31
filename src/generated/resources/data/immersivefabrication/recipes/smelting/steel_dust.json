@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "immersivefabrication:steel_dust"
+  },
+  "result": "immersivefabrication:steel_ingot"
+}

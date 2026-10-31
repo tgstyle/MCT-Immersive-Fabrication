@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "immersivefabrication:block/wooden/treated_wood_vertical",
+    "side": "immersivefabrication:block/wooden/treated_wood_vertical",
+    "top": "immersivefabrication:block/wooden/treated_wood_vertical"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": {
+      "item": "immersivefabrication:flax_fiber"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "HHH",
+    "HSH",
+    "HHH"
+  ],
+  "result": {
+    "count": 1,
+    "item": "immersivefabrication:linen"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:terracotta"
+    },
+    "I": {
+      "tag": "forge:ingots/copper"
+    }
+  },
+  "pattern": [
+    " I ",
+    "BIB",
+    "BIB"
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersivefabrication:terminal_lv"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "immersivefabrication:block/heating_element",
+      "x": 90
+    },
+    "active=false,facing=east": {
+      "model": "immersivefabrication:block/heating_element",
+      "y": 90
+    },
+    "active=false,facing=north": {
+      "model": "immersivefabrication:block/heating_element"
+    },
+    "active=false,facing=south": {
+      "model": "immersivefabrication:block/heating_element",
+      "y": 180
+    },
+    "active=false,facing=up": {
+      "model": "immersivefabrication:block/heating_element",
+      "x": 270
+    },
+    "active=false,facing=west": {
+      "model": "immersivefabrication:block/heating_element",
+      "y": 270
+    },
+    "active=true,facing=down": {
+      "model": "immersivefabrication:block/heating_element_active",
+      "x": 90
+    },
+    "active=true,facing=east": {
+      "model": "immersivefabrication:block/heating_element_active",
+      "y": 90
+    },
+    "active=true,facing=north": {
+      "model": "immersivefabrication:block/heating_element_active"
+    },
+    "active=true,facing=south": {
+      "model": "immersivefabrication:block/heating_element_active",
+      "y": 180
+    },
+    "active=true,facing=up": {
+      "model": "immersivefabrication:block/heating_element_active",
+      "x": 270
+    },
+    "active=true,facing=west": {
+      "model": "immersivefabrication:block/heating_element_active",
+      "y": 270
+    }
+  }
+}

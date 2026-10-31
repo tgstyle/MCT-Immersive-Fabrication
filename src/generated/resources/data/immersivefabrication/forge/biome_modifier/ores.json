@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "immersivefabrication:aluminum_ore",
+    "immersivefabrication:lead_ore",
+    "immersivefabrication:silver_ore",
+    "immersivefabrication:nickel_ore",
+    "immersivefabrication:nickel_ore_deep",
+    "immersivefabrication:uranium_ore"
+  ],
+  "step": "underground_ores"
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "key": {
+    "C": {
+      "item": "immersivefabrication:spool_copper"
+    },
+    "F": {
+      "item": "immersivefabrication:linen"
+    }
+  },
+  "pattern": [
+    "FCF",
+    "CFC",
+    "FCF"
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersivefabrication:spool_copper_insulated"
+  }
+}

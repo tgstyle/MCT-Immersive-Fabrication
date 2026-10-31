@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "tag": "forge:storage_blocks/copper"
+    },
+    "E": {
+      "tag": "forge:ingots/aluminum"
+    },
+    "I": {
+      "tag": "forge:ingots/steel"
+    }
+  },
+  "pattern": [
+    "III",
+    "EDE",
+    "III"
+  ],
+  "result": {
+    "count": 2,
+    "item": "immersivefabrication:generator"
+  }
+}

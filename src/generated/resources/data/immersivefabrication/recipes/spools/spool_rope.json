@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "key": {
+    "I": {
+      "item": "immersivefabrication:flax_fiber"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " I ",
+    "ISI",
+    " I "
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersivefabrication:spool_rope"
+  }
+}

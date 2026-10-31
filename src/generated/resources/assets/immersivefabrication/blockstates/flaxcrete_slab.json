@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/flaxcrete_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/flaxcrete"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/flaxcrete_slab_top"
+    }
+  }
+}

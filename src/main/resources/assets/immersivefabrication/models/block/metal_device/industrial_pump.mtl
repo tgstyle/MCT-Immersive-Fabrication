@@ -1,0 +1,8 @@
+newmtl m_5678d076-de29-e874-2d1f-2a8e61edb42e
+map_Kd immersivefabrication:block/industrial_pump_side_none
+newmtl m_a76684d8-539a-445f-e664-46a7b7d988cc
+map_Kd immersivefabrication:block/industrial_pump_bottom_none
+newmtl m_71a0f05c-f5d3-bc32-de17-ef40e2c1d3b2
+map_Kd immersivefabrication:block/industrial_pump_bottom_in
+newmtl m_7e51020c-9a97-4a51-abff-0faea8c7708c
+map_Kd immersivefabrication:block/industrial_pump

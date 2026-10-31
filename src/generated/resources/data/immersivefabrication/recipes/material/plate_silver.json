@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/silver"
+    },
+    {
+      "item": "immersivefabrication:hammer"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "immersivefabrication:silver_plate"
+  }
+}

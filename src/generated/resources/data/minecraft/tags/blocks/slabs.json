@@ -1,0 +1,25 @@
+{
+  "values": [
+    "immersivefabrication:copper_cladding_slab",
+    "immersivefabrication:aluminum_cladding_slab",
+    "immersivefabrication:lead_cladding_slab",
+    "immersivefabrication:silver_cladding_slab",
+    "immersivefabrication:nickel_cladding_slab",
+    "immersivefabrication:uranium_cladding_slab",
+    "immersivefabrication:constantan_cladding_slab",
+    "immersivefabrication:steel_cladding_slab",
+    "immersivefabrication:iron_cladding_slab",
+    "immersivefabrication:gold_cladding_slab",
+    "immersivefabrication:steel_scaffolding_standard_slab",
+    "immersivefabrication:steel_scaffolding_grate_top_slab",
+    "immersivefabrication:steel_scaffolding_wooden_top_slab",
+    "immersivefabrication:aluminum_scaffolding_standard_slab",
+    "immersivefabrication:aluminum_scaffolding_grate_top_slab",
+    "immersivefabrication:aluminum_scaffolding_wooden_top_slab",
+    "immersivefabrication:concrete_slab",
+    "immersivefabrication:flaxcrete_slab",
+    "immersivefabrication:treated_wood_horizontal_slab",
+    "immersivefabrication:treated_wood_vertical_slab",
+    "immersivefabrication:treated_wood_packaged_slab"
+  ]
+}

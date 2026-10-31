@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "forge:obj", "model": "immersivefabrication:models/block/metal_device/industrial_pump.obj", "flip_v": true, "automatic_culling": false, "visibility": {"cube": false, "cube_motor": false}, "textures": {"particle": "immersivefabrication:block/industrial_pump"}}

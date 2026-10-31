@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "immersivefabrication:fluid_pipe", "model": "immersivefabrication:models/block/metal_device/fluid_pipe.obj", "flip_v": true, "automatic_culling": false, "textures": {"particle": "immersivefabrication:block/fluid_pipe"}}

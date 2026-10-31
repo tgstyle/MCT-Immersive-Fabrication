@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "immersivefabrication:block/light_fabrication"
+    }
+  }
+}

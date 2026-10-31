@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "immersivefabrication:block/stone/flaxcrete",
+    "side": "immersivefabrication:block/stone/flaxcrete",
+    "top": "immersivefabrication:block/stone/flaxcrete"
+  }
+}

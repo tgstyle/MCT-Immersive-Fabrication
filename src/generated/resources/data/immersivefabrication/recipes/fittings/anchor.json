@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/steel"
+    },
+    "S": {
+      "item": "immersivefabrication:nickel_rod"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "I I"
+  ],
+  "result": {
+    "count": 8,
+    "item": "immersivefabrication:anchor"
+  }
+}

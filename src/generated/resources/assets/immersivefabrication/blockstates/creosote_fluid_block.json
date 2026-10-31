@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "immersivefabrication:block/creosote_fluid_block"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "values": [
+    "#forge:dusts/aluminum",
+    "#forge:dusts/constantan",
+    "#forge:dusts/copper",
+    "#forge:dusts/gold",
+    "#forge:dusts/graphite",
+    "#forge:dusts/hop_graphite",
+    "#forge:dusts/iron",
+    "#forge:dusts/lead",
+    "#forge:dusts/nickel",
+    "#forge:dusts/niter",
+    "#forge:dusts/saltpeter",
+    "#forge:dusts/silver",
+    "#forge:dusts/steel",
+    "#forge:dusts/sulfur",
+    "#forge:dusts/uranium"
+  ]
+}

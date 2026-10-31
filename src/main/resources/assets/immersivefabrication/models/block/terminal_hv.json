@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "forge:obj", "model": "immersivefabrication:models/block/fitting/terminal_hv.obj", "flip_v": true, "automatic_culling": false, "textures": {"particle": "immersivefabrication:block/terminal_hv"}}

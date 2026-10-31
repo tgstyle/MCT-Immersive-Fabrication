@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "immersivefabrication:block/metal/fluid_placer_side_none"
+  }
+}

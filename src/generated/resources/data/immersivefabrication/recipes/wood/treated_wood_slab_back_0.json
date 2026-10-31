@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "W": {
+      "item": "immersivefabrication:treated_wood_horizontal_slab"
+    }
+  },
+  "pattern": [
+    "W",
+    "W"
+  ],
+  "result": {
+    "count": 1,
+    "item": "immersivefabrication:treated_wood_horizontal"
+  }
+}

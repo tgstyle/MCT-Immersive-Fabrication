@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "immersivefabrication:block/metal/cladding_gold",
+    "side": "immersivefabrication:block/metal/cladding_gold",
+    "top": "immersivefabrication:block/metal/cladding_gold"
+  }
+}

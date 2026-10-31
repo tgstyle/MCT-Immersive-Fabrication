@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "immersivefabrication:block/wooden/treated_wood_packaged"
+  }
+}

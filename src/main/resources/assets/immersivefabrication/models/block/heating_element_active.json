@@ -1,0 +1,6 @@
+{
+  "parent": "immersivefabrication:block/heating_element",
+  "textures": {
+    "heater": "immersivefabrication:block/metal/heating_element_active"
+  }
+}

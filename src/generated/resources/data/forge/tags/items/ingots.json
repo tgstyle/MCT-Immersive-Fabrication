@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#forge:ingots/aluminum",
+    "#forge:ingots/constantan",
+    "#forge:ingots/graphite",
+    "#forge:ingots/hop_graphite",
+    "#forge:ingots/lead",
+    "#forge:ingots/nickel",
+    "#forge:ingots/silver",
+    "#forge:ingots/steel",
+    "#forge:ingots/uranium"
+  ]
+}

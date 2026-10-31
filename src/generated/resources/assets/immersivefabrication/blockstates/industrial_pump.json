@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "immersivefabrication:block/industrial_pump_lower"
+    },
+    "half=upper": {
+      "model": "immersivefabrication:block/industrial_pump"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:water_bucket"
+    },
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "G": {
+      "item": "minecraft:gravel"
+    },
+    "S": {
+      "tag": "forge:slag"
+    }
+  },
+  "pattern": [
+    "SCS",
+    "GBG",
+    "SCS"
+  ],
+  "result": {
+    "count": 12,
+    "item": "immersivefabrication:concrete"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "immersivefabrication:block/metal/uranium_top",
+    "side": "immersivefabrication:block/metal/uranium_side"
+  }
+}

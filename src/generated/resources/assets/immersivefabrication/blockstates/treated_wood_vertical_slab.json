@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/treated_wood_vertical_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/treated_wood_vertical"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/treated_wood_vertical_slab_top"
+    }
+  }
+}

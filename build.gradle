@@ -62,6 +62,7 @@ def version_replaces = { [
 
 processResources {
     duplicatesStrategy = DuplicatesStrategy.FAIL
+    exclude ".cache"
     inputs.properties(version_replaces())
     filesMatching(["META-INF/mods.toml", "pack.mcmeta"]) {
         expand version_replaces()
@@ -70,13 +71,39 @@ processResources {
 
 def devSyncScript = null
 for (def dir = rootDir; dir != null && devSyncScript == null; dir = dir.parentFile) {
-    def candidate = new File(dir, '#scripts/mods-devsync.gradle')
+    def candidate = new File(dir, '#scripts/gradle/mods-devsync.gradle')
     if (candidate.isFile()) { devSyncScript = candidate }
 }
 if (devSyncScript != null) { apply from: devSyncScript }
 
 def icJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('ImmersiveConvergence', versionProps['devsync_ic']), 'build/devsync-pins/ImmersiveConvergence.jar')
 if (icJar == null) { logger.warn('No IC devSync pin: set devsync_ic in version.properties to a snapshot in the devsync cache; falling back to CurseMaven') }
+
+def itJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('MCT-Immersive-Technology', versionProps['devsync_it']), 'build/devsync-pins/MCT-Immersive-Technology.jar')
+if (itJar == null) { logger.warn('No IT devSync pin: set devsync_it in version.properties to a snapshot in the devsync cache') }
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = [
+                    "$rootDir/src/main/resources",
+                    "$rootDir/src/generated/resources",
+            ]
+        }
+    }
+    datagen {
+        java {
+            srcDirs = ["$rootDir/src/datagen/java"]
+        }
+        resources {
+            srcDirs = ["$rootDir/src/datagen/resources"]
+        }
+        compileClasspath += sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
 
 legacyForge {
     version = "${version_minecraft}-${version_forge}"
@@ -86,9 +113,14 @@ legacyForge {
         minecraftVersion = project.version_minecraft
     }
 
+    accessTransformers.from file('src/main/resources/META-INF/accesstransformer.cfg')
+    validateAccessTransformers = true
+
     mods {
         register(mod_id.toString()) { net.neoforged.moddevgradle.dsl.ModModel mod ->
-            mod.modSourceSets.add(sourceSets.main)
+            SourceSetContainer sets = project.extensions.getByType(SourceSetContainer)
+            mod.modSourceSets.add(sets.named('main'))
+            mod.modSourceSets.add(sets.named('datagen'))
         }
     }
 
@@ -109,10 +141,20 @@ legacyForge {
             systemProperty 'forge.logging.markers', ''
             programArguments.addAll '--nogui'
         }
+        data {
+            data()
+            sourceSet = sourceSets.datagen
+            systemProperty 'forge.logging.markers', ''
+            systemProperty 'fml.earlyprogresswindow', 'false'
+            programArguments.addAll '--mod', mod_id.toString(), '--all',
+                    '--output', file('src/generated/resources/').getAbsolutePath(), '--validate',
+                    '--existing', file('src/main/resources/').getAbsolutePath()
+        }
     }
 }
 
 repositories {
+    maven { url = 'https://maven.blamejared.com' ; content { includeGroup 'mezz.jei' } }
     maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
     maven {
         url = 'https://www.cursemaven.com'
@@ -138,6 +180,12 @@ dependencies {
     } else {
         modImplementation "curse.maven:${version_ic_curse}"
     }
+    if (itJar != null) {
+        runtimeOnly files(itJar)
+    }
+    modRuntimeOnly "mezz.jei:jei-${version_minecraft}-forge:${versionProps['version_jei']}"
+    modRuntimeOnly "curse.maven:${versionProps['version_jade_curse']}"
+    modRuntimeOnly "curse.maven:${versionProps['version_top_curse']}"
 }
 
 jar {

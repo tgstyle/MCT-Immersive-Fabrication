@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "immersivefabrication:block/metal/barrel_iron_none",
+    "side": "immersivefabrication:block/metal/barrel_iron_side"
+  }
+}
