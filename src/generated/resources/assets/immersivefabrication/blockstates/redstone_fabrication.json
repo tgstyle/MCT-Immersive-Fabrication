@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "immersivefabrication:block/redstone_fabrication"
+    }
+  }
+}

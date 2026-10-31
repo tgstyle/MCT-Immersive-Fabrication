@@ -41,6 +41,7 @@ ext {
     version_parchment = versionProps['version_parchment']
     version_ic = versionProps.getProperty('version_ic', '[0,)')
     version_ic_curse = versionProps['version_ic_curse']
+    version_dualcodecs = versionProps['version_dualcodecs']
 }
 
 def version_replaces = [
@@ -52,10 +53,12 @@ def version_replaces = [
 ]
 
 processResources {
+    duplicatesStrategy = DuplicatesStrategy.FAIL
     inputs.properties(version_replaces)
     filesMatching('META-INF/*.mods.toml') {
         expand version_replaces
     }
+    exclude '.cache'
     doLast {
         destinationDir.eachFileRecurse { File file ->
             if (file.file && (file.name.endsWith('.json') || file.name.endsWith('.mcmeta'))) {
@@ -67,13 +70,50 @@ processResources {
 
 def devSyncScript = null
 for (def dir = rootDir; dir != null && devSyncScript == null; dir = dir.parentFile) {
-    def candidate = new File(dir, '#scripts/mods-devsync.gradle')
+    def candidate = new File(dir, '#scripts/gradle/mods-devsync.gradle')
     if (candidate.isFile()) { devSyncScript = candidate }
 }
 if (devSyncScript != null) { apply from: devSyncScript }
 
 def icJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('ImmersiveConvergence-21', versionProps['devsync_ic']), 'build/devsync-pins/ImmersiveConvergence-21.jar')
 if (icJar == null) { logger.warn('No IC devSync pin: set devsync_ic in version.properties to a snapshot in the devsync cache') }
+
+def itJar = devSyncScript == null ? null : devSyncStaged(devSyncPin('MCT-Immersive-Technology-21', versionProps['devsync_it']), 'build/devsync-pins/MCT-Immersive-Technology-21.jar')
+if (itJar == null) { logger.warn('No IT devSync pin: set devsync_it in version.properties to a snapshot in the devsync cache') }
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = [
+                    "$rootDir/src/main/resources",
+                    "$rootDir/src/generated/resources",
+            ]
+        }
+    }
+    datagen {
+        java { srcDirs = ["$rootDir/src/datagen/java"] }
+        resources { srcDirs = ["$rootDir/src/datagen/resources"] }
+        compileClasspath += main.compileClasspath
+        runtimeClasspath += main.runtimeClasspath
+        compileClasspath += main.output
+        runtimeClasspath += main.output
+    }
+}
+
+gradle.projectsEvaluated {
+    layout.buildDirectory.dir('classes/java/datagen').get().asFile.mkdirs()
+    layout.buildDirectory.dir('resources/datagen').get().asFile.mkdirs()
+}
+
+tasks.register('prepareDatagenOutputs') {
+    dependsOn datagenClasses, processResources
+    def outputDirs = [layout.buildDirectory.dir('classes/java/datagen'), layout.buildDirectory.dir('resources/datagen')]
+    doFirst { outputDirs.each { it.get().asFile.mkdirs() } }
+}
+
+afterEvaluate {
+    tasks.named('runData').configure { dependsOn('prepareDatagenOutputs') }
+}
 
 neoForge {
     version = project.version_neoforge
@@ -83,10 +123,12 @@ neoForge {
         minecraftVersion = project.version_minecraft
     }
 
-    mods {
-        register(mod_id.toString()) { mod ->
-            mod.modSourceSets.add(sourceSets.main)
-        }
+    accessTransformers.from file('src/main/resources/META-INF/accesstransformer.cfg')
+    validateAccessTransformers = true
+
+    mods.register(mod_id as String) {
+        sourceSet(sourceSets.main)
+        sourceSet(sourceSets.datagen)
     }
 
     runs {
@@ -106,11 +148,17 @@ neoForge {
             programArguments.addAll '--nogui'
             jvmArgument('-XX:StartFlightRecording=maxsize=512M,dumponexit=true,filename=logs/profile.jfr,settings=profile')
         }
+        data {
+            data()
+            sourceSet = sourceSets.datagen
+            programArguments.addAll '--mod', mod_id.toString(), '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
     }
 }
 
 repositories {
     mavenCentral()
+    maven { url = 'https://maven.blamejared.com' ; content { includeGroup 'malte0811' ; includeGroup 'mezz.jei' } }
     maven { url = 'https://www.cursemaven.com' ; content { includeGroup 'curse.maven' } }
     maven { url = 'https://cfa2.cursemaven.com' ; content { includeGroup 'curse.maven' } }
     maven { name = 'ParchmentMC' ; url = 'https://ldtteam.jfrog.io/artifactory/parchmentmc-public/' }
@@ -123,6 +171,13 @@ dependencies {
         logger.warn('Falling back to CurseMaven for ImmersiveConvergence')
         implementation "curse.maven:${version_ic_curse}"
     }
+    if (itJar != null) {
+        runtimeOnly files(itJar)
+        runtimeOnly "malte0811:DualCodecs:${version_dualcodecs}"
+    }
+    runtimeOnly "mezz.jei:jei-${version_minecraft}-neoforge:${versionProps['version_jei']}"
+    runtimeOnly "curse.maven:${versionProps['version_jade_curse']}"
+    runtimeOnly "curse.maven:${versionProps['version_top_curse']}"
 }
 
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

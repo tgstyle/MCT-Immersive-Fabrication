@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "I": {
+      "tag": "c:plates/iron"
+    }
+  },
+  "pattern": [
+    "IBI",
+    "B B",
+    "IBI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:fluid_placer"
+  }
+}

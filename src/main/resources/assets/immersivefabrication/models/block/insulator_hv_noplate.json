@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "neoforge:obj", "model": "immersivefabrication:models/block/fitting/insulator_hv.obj", "flip_v": true, "automatic_culling": false, "textures": {"particle": "immersivefabrication:block/insulator_hv"}, "render_type": "minecraft:translucent", "visibility": {"cube_plate": false}}

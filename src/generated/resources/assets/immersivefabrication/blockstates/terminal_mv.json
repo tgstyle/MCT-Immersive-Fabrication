@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,plate=false": {
+      "model": "immersivefabrication:block/terminal_mv_noplate"
+    },
+    "facing=down,plate=true": {
+      "model": "immersivefabrication:block/terminal_mv"
+    },
+    "facing=east,plate=false": {
+      "model": "immersivefabrication:block/terminal_mv_noplate",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,plate=true": {
+      "model": "immersivefabrication:block/terminal_mv",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north,plate=false": {
+      "model": "immersivefabrication:block/terminal_mv_noplate",
+      "x": 90,
+      "y": 180
+    },
+    "facing=north,plate=true": {
+      "model": "immersivefabrication:block/terminal_mv",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,plate=false": {
+      "model": "immersivefabrication:block/terminal_mv_noplate",
+      "x": 90
+    },
+    "facing=south,plate=true": {
+      "model": "immersivefabrication:block/terminal_mv",
+      "x": 90
+    },
+    "facing=up,plate=false": {
+      "model": "immersivefabrication:block/terminal_mv_noplate",
+      "x": 180
+    },
+    "facing=up,plate=true": {
+      "model": "immersivefabrication:block/terminal_mv",
+      "x": 180
+    },
+    "facing=west,plate=false": {
+      "model": "immersivefabrication:block/terminal_mv_noplate",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,plate=true": {
+      "model": "immersivefabrication:block/terminal_mv",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

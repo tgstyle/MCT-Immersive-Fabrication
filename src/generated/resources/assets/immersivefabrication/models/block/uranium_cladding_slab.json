@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "immersivefabrication:block/metal/cladding_uranium",
+    "side": "immersivefabrication:block/metal/cladding_uranium",
+    "top": "immersivefabrication:block/metal/cladding_uranium"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/iron_cladding_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/iron_cladding"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/iron_cladding_slab_top"
+    }
+  }
+}

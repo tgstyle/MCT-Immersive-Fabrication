@@ -1,0 +1,54 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "immersivefabrication:flax",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "type": "stage5"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "functions": [
+                {
+                  "add": false,
+                  "count": {
+                    "type": "minecraft:binomial",
+                    "n": 3.0,
+                    "p": 0.75
+                  },
+                  "function": "minecraft:set_count"
+                },
+                {
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:binomial_with_bonus_count",
+                  "function": "minecraft:apply_bonus",
+                  "parameters": {
+                    "extra": 0,
+                    "probability": 0.75
+                  }
+                }
+              ],
+              "name": "immersivefabrication:flax_fiber"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "immersivefabrication:seed_flax"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "immersivefabrication:blocks/flax"
+}

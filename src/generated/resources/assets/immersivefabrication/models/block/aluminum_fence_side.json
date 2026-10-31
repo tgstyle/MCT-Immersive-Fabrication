@@ -1,0 +1,6 @@
+{
+  "parent": "immersivefabrication:block/fence_side",
+  "textures": {
+    "texture": "immersivefabrication:block/metal/aluminum"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "c:wires/copper"
+    },
+    "S": {
+      "item": "immersivefabrication:copper_rod"
+    }
+  },
+  "pattern": [
+    " I ",
+    "ISI",
+    " I "
+  ],
+  "result": {
+    "count": 4,
+    "id": "immersivefabrication:spool_copper"
+  }
+}

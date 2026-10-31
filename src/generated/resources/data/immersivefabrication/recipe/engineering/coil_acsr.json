@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "W": {
+      "tag": "c:wires/acsr"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "WIW",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:coil_acsr"
+  }
+}

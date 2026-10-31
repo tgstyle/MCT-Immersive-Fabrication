@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "immersivefabrication:fluid_pipe_dye",
+  "ingredients": [
+    {
+      "item": "immersivefabrication:fluid_pipe"
+    },
+    {
+      "tag": "c:dyes/light_blue"
+    }
+  ],
+  "result": {
+    "components": {
+      "immersivefabrication:color": 3
+    },
+    "id": "immersivefabrication:fluid_pipe"
+  }
+}

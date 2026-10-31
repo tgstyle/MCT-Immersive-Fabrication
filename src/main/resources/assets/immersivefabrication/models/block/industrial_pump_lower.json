@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "immersivefabrication:industrial_pump_base", "model": "immersivefabrication:models/block/metal_device/industrial_pump.obj", "transform": {"translation": [0, 1, 0]}, "flip_v": true, "automatic_culling": false, "textures": {"particle": "immersivefabrication:block/industrial_pump_side_none"}}

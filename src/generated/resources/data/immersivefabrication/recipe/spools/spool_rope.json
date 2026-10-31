@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "immersivefabrication:flax_fiber"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " I ",
+    "ISI",
+    " I "
+  ],
+  "result": {
+    "count": 4,
+    "id": "immersivefabrication:spool_rope"
+  }
+}

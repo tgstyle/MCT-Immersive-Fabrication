@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "immersivefabrication:block/anchor"
+    },
+    "facing=east": {
+      "model": "immersivefabrication:block/anchor",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north": {
+      "model": "immersivefabrication:block/anchor",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south": {
+      "model": "immersivefabrication:block/anchor",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "immersivefabrication:block/anchor",
+      "x": 180
+    },
+    "facing=west": {
+      "model": "immersivefabrication:block/anchor",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

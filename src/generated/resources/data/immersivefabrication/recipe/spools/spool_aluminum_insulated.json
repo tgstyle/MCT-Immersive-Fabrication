@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "immersivefabrication:spool_aluminum"
+    },
+    "F": {
+      "item": "immersivefabrication:linen"
+    }
+  },
+  "pattern": [
+    "FCF",
+    "CFC",
+    "FCF"
+  ],
+  "result": {
+    "count": 4,
+    "id": "immersivefabrication:spool_aluminum_insulated"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dusts/copper"
+    },
+    {
+      "tag": "c:dusts/nickel"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "immersivefabrication:constantan_dust"
+  }
+}

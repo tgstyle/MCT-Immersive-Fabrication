@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:terracotta"
+    },
+    "I": {
+      "tag": "c:ingots/copper"
+    }
+  },
+  "pattern": [
+    " I ",
+    "BIB"
+  ],
+  "result": {
+    "count": 8,
+    "id": "immersivefabrication:insulator_lv"
+  }
+}

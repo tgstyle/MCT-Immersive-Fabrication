@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/aluminum_cladding_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/aluminum_cladding"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/aluminum_cladding_slab_top"
+    }
+  }
+}

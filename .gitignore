@@ -13,6 +13,7 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+src/generated/resources/.cache/
 
 # Eclipse Gradle plugin generated files
 # Eclipse Core

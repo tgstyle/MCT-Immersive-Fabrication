@@ -1,0 +1,19 @@
+{
+  "values": [
+    "#c:dusts/aluminum",
+    "#c:dusts/constantan",
+    "#c:dusts/copper",
+    "#c:dusts/gold",
+    "#c:dusts/graphite",
+    "#c:dusts/hop_graphite",
+    "#c:dusts/iron",
+    "#c:dusts/lead",
+    "#c:dusts/nickel",
+    "#c:dusts/niter",
+    "#c:dusts/saltpeter",
+    "#c:dusts/silver",
+    "#c:dusts/steel",
+    "#c:dusts/sulfur",
+    "#c:dusts/uranium"
+  ]
+}

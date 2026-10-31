@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "c:ingots/steel"
+    },
+    "R": {
+      "tag": "c:rods/steel"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "IRI"
+  ],
+  "result": {
+    "count": 3,
+    "id": "immersivefabrication:steel_fence"
+  }
+}

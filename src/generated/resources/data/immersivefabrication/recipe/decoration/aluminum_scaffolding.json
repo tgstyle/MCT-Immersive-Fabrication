@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "c:ingots/aluminum"
+    },
+    "R": {
+      "tag": "c:rods/aluminum"
+    }
+  },
+  "pattern": [
+    "III",
+    " R ",
+    "R R"
+  ],
+  "result": {
+    "count": 6,
+    "id": "immersivefabrication:aluminum_scaffolding_standard"
+  }
+}

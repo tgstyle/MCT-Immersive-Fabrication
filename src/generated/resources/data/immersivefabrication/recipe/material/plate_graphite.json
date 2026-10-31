@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dusts/graphite"
+    },
+    {
+      "item": "immersivefabrication:hammer"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:graphite_plate"
+  }
+}

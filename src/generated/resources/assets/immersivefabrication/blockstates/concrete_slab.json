@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/concrete_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/concrete"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/concrete_slab_top"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "neoforge:obj", "model": "immersivefabrication:models/block/fitting/transformer_hv.obj", "flip_v": true, "transform": {"translation": [0, 1, 0]}, "automatic_culling": false, "textures": {"particle": "immersivefabrication:block/transformer_hv"}}

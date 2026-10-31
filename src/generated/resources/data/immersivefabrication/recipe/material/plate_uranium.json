@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/uranium"
+    },
+    {
+      "item": "immersivefabrication:hammer"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:uranium_plate"
+  }
+}

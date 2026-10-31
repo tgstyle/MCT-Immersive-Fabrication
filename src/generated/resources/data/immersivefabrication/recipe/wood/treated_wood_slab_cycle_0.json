@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "immersivefabrication:treated_wood_horizontal_slab"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:treated_wood_vertical_slab"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "immersivefabrication:steel_scaffolding_wooden_top_slab"
+    }
+  },
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:steel_scaffolding_wooden_top"
+  }
+}

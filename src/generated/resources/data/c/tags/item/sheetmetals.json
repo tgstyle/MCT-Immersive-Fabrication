@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#c:sheetmetals/copper",
+    "#c:sheetmetals/aluminum",
+    "#c:sheetmetals/lead",
+    "#c:sheetmetals/silver",
+    "#c:sheetmetals/nickel",
+    "#c:sheetmetals/uranium",
+    "#c:sheetmetals/constantan",
+    "#c:sheetmetals/steel",
+    "#c:sheetmetals/iron",
+    "#c:sheetmetals/gold"
+  ]
+}

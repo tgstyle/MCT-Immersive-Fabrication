@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "immersivefabrication:coil_acsr"
+    },
+    "H": {
+      "item": "immersivefabrication:terminal_hv"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "M": {
+      "item": "immersivefabrication:terminal_mv"
+    }
+  },
+  "pattern": [
+    "M H",
+    "IBI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:transformer_hv"
+  }
+}

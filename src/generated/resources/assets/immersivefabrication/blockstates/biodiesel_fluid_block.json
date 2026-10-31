@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "immersivefabrication:block/biodiesel_fluid_block"
+    }
+  }
+}

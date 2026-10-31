@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/coal_coke"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "immersivefabrication:coal_coke"
+  }
+}

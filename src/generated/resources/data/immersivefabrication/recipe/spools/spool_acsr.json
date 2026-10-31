@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "immersivefabrication:spool_acsr",
+  "key": {
+    "A": {
+      "tag": "c:wires/aluminum"
+    },
+    "I": {
+      "tag": "c:wires/acsr"
+    },
+    "S": {
+      "item": "immersivefabrication:nickel_rod"
+    }
+  },
+  "pattern": [
+    " I ",
+    "ASA",
+    " I "
+  ],
+  "result": {
+    "count": 4,
+    "id": "immersivefabrication:spool_acsr"
+  }
+}

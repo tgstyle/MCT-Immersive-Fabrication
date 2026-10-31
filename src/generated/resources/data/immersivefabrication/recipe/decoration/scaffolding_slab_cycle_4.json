@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "immersivefabrication:aluminum_scaffolding_grate_top_slab"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:aluminum_scaffolding_wooden_top_slab"
+  }
+}

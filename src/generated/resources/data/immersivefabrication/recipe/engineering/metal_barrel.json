@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "tag": "c:sheetmetals/iron"
+    },
+    "S": {
+      "item": "immersivefabrication:iron_cladding_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "B B",
+    "BBB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:metal_barrel"
+  }
+}

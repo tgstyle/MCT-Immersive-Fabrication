@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "immersivefabrication:spool_aluminum"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "L": {
+      "item": "immersivefabrication:terminal_lv"
+    },
+    "M": {
+      "item": "immersivefabrication:terminal_mv"
+    }
+  },
+  "pattern": [
+    "L M",
+    "IBI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:transformer"
+  }
+}

@@ -29,3 +29,6 @@ mandatory=true
 versionRange="${version_ic}"
 ordering="NONE"
 side="BOTH"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "immersivefabrication:copper_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:copper_ingot"
+  }
+}

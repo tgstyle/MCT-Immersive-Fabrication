@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/lead_cladding_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/lead_cladding"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/lead_cladding_slab_top"
+    }
+  }
+}

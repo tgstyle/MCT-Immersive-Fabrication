@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "tag": "c:rods/treated_wood"
+    },
+    "W": [
+      {
+        "item": "immersivefabrication:treated_wood_horizontal"
+      },
+      {
+        "item": "immersivefabrication:treated_wood_vertical"
+      },
+      {
+        "item": "immersivefabrication:treated_wood_packaged"
+      }
+    ]
+  },
+  "pattern": [
+    "WSW",
+    "WSW"
+  ],
+  "result": {
+    "count": 3,
+    "id": "immersivefabrication:treated_wood_fence"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "immersivefabrication:wires_enabled"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "c:ingots/steel"
+    },
+    "S": {
+      "item": "immersivefabrication:nickel_rod"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "I I"
+  ],
+  "result": {
+    "count": 8,
+    "id": "immersivefabrication:anchor"
+  }
+}

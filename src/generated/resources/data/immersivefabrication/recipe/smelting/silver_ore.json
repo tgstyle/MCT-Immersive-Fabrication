@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "immersivefabrication:silver_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersivefabrication:silver_ingot"
+  }
+}

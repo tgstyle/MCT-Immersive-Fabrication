@@ -1,0 +1,1 @@
+{"parent":"minecraft:block/cube","textures":{"heater":"immersivefabrication:block/metal/heating_element","particle":"#heater","down":"#heater","up":"#heater","north":"immersivefabrication:block/metal/heating_element_socket","south":"#heater","west":"#heater","east":"#heater"}}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "c:ingots/aluminum"
+    },
+    "R": {
+      "tag": "c:rods/aluminum"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "IRI"
+  ],
+  "result": {
+    "count": 3,
+    "id": "immersivefabrication:aluminum_fence"
+  }
+}
