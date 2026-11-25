@@ -10,6 +10,7 @@ import mctmods.immersivefabrication.common.blocks.plant.flax.FlaxBlock;
 import mctmods.immersivefabrication.common.blocks.plant.flax.FlaxStage;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -20,9 +21,11 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder.PartialBlockstate;
@@ -127,12 +130,6 @@ public class ModBlockState extends BlockStateProvider {
         getVariantBuilder(block("industrial_pump")).partialState().with(IndustrialPumpBlock.HALF, DoubleBlockHalf.LOWER).modelForState().modelFile(existing("industrial_pump_lower")).addModel().partialState().with(IndustrialPumpBlock.HALF, DoubleBlockHalf.UPPER).modelForState().modelFile(existing("industrial_pump")).addModel();
     }
 
-    private void ladder() {
-        ResourceLocation texture = tex("metal/metal_ladder");
-        ModelFile model = models().withExistingParent("steel_ladder", mcLoc("block/ladder")).texture("particle", texture).texture("texture", texture).renderType("minecraft:cutout");
-        for (Direction direction : Direction.Plane.HORIZONTAL) { place(getVariantBuilder(block("steel_ladder")).partialState().with(BlockStateProperties.HORIZONTAL_FACING, direction), model, new int[]{0, ((int) direction.toYRot() + 180) % 360}); }
-    }
-
     private void flax() {
         for (FlaxStage stage : FlaxStage.values()) {
             String name = "flax_" + stage.getSerializedName();
@@ -170,7 +167,6 @@ public class ModBlockState extends BlockStateProvider {
         simpleBlock(block("fluid_pipe"), existing("fluid_pipe"));
         heatingElement();
         industrialPump();
-        ladder();
     }
 
     private void stone() {
@@ -201,6 +197,18 @@ public class ModBlockState extends BlockStateProvider {
         transformers();
     }
 
+    private void cokeOven() {
+        ModelFile body = existing("coke_oven");
+        ModelFile empty = models().getBuilder("coke_oven_empty").texture("particle", modLoc("multiblock/stone/coke_oven"));
+        Block block = IFabMultiblocks.COKE_OVEN.block().get();
+        BooleanProperty slave = (BooleanProperty) Objects.requireNonNull(block.getStateDefinition().getProperty("multiblockslave"));
+        DirectionProperty facing = (DirectionProperty) Objects.requireNonNull(block.getStateDefinition().getProperty("facing"));
+        getVariantBuilder(block).forAllStates(state -> {
+            if (state.getValue(slave)) { return ConfiguredModel.builder().modelFile(empty).build(); }
+            return ConfiguredModel.builder().modelFile(body).rotationY(((int) state.getValue(facing).toYRot() + 180) % 360).build();
+        });
+    }
+
     private void fluids() {
         for (FluidEntry entry : IFabFluids.ENTRIES) { simpleBlock(entry.getBlock(), existing(BuiltInRegistries.BLOCK.getKey(entry.getBlock()).getPath())); }
     }
@@ -213,6 +221,7 @@ public class ModBlockState extends BlockStateProvider {
         wood();
         wires();
         flax();
+        cokeOven();
         fluids();
     }
 }

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/ladder",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "particle": "immersivefabrication:block/metal/metal_ladder",
-    "texture": "immersivefabrication:block/metal/metal_ladder"
-  }
-}

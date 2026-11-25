@@ -2,7 +2,9 @@ package mctmods.immersivefabrication.common.items;
 
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.HeatingElementBlockEntity;
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.IndustrialPumpBlockEntity;
+import mctmods.immersivefabrication.common.multiblocks.stone.cokeoven.CokeOvenMultiblock;
 
+import com.immersiveconvergence.api.multiblock.MultiblockRegistry;
 import com.immersiveconvergence.api.wires.fittings.ICFittingBlockEntity;
 
 import net.minecraft.core.BlockPos;
@@ -26,6 +28,9 @@ public class ScrewdriverItem extends Item {
     @Override @Nonnull public InteractionResult onItemUseFirst(@Nonnull ItemStack stack, @Nonnull UseOnContext context) {
         Level level = context.getLevel();
         BlockEntity blockEntity = level.getBlockEntity(context.getClickedPos());
+        Player player = context.getPlayer();
+        if (blockEntity == null && !level.isClientSide && player != null && !player.isShiftKeyDown() && MultiblockRegistry.formFirstMatching(level, context.getClickedPos(), context.getClickedFace(), player, stack, id -> id.equals(CokeOvenMultiblock.INSTANCE.getUniqueName()))) { return InteractionResult.sidedSuccess(false); }
+        if (blockEntity == null && level.isClientSide && player != null && !player.isShiftKeyDown() && CokeOvenMultiblock.INSTANCE.isBlockTrigger(level.getBlockState(context.getClickedPos()), context.getClickedFace(), level)) { return InteractionResult.sidedSuccess(true); }
         if (blockEntity instanceof IndustrialPumpBlockEntity pump) { return configurePump(pump, context); }
         if (blockEntity instanceof HeatingElementBlockEntity heater) { return turnHeater(heater, context); }
         if (!(blockEntity instanceof ICFittingBlockEntity fitting) || !fitting.platable()) { return InteractionResult.PASS; }

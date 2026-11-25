@@ -79,12 +79,12 @@
     "immersivefabrication:flaxcrete",
     "immersivefabrication:flaxcrete_slab",
     "immersivefabrication:flaxcrete_stairs",
-    "immersivefabrication:steel_ladder",
     "immersivefabrication:fluid_pipe",
     "immersivefabrication:fluid_placer",
     "immersivefabrication:heating_element",
     "immersivefabrication:metal_barrel",
     "immersivefabrication:industrial_pump",
+    "immersivefabrication:coke_oven",
     {
       "id": "immersivefabrication:terminal_lv",
       "required": false

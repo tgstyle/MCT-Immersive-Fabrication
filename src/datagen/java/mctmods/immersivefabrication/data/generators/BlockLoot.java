@@ -7,6 +7,7 @@ import mctmods.immersivefabrication.common.blocks.plant.flax.FlaxStage;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabDataComponents;
 import mctmods.immersivefabrication.core.registration.IFabItems;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -91,6 +92,7 @@ public class BlockLoot extends BlockLootSubProvider {
     @Override protected void generate() {
         IFabBlocks.ALL.forEach((id, block) -> entry(id, block.get()));
         table(IFabBlocks.FLAX.get(), flax(IFabBlocks.FLAX.get()));
+        table(IFabMultiblocks.COKE_OVEN.block().get(), LootTable.lootTable());
     }
 
     @Override @Nonnull protected Iterable<Block> getKnownBlocks() { return known; }

@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/block", "loader": "neoforge:obj", "model": "immersivefabrication:models/block/multiblock/stone/coke_oven/coke_oven.obj", "flip_v": true, "automatic_culling": false, "visibility": {"cube": false}, "textures": {"particle": "immersivefabrication:multiblock/stone/coke_oven"}}

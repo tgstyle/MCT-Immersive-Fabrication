@@ -27,7 +27,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 @SuppressWarnings("DataFlowIssue") public final class IFabBlockEntities {
-    private static final DeferredRegister<BlockEntityType<?>> REGISTER = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ImmersiveFabrication.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> REGISTER = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ImmersiveFabrication.MODID);
     private static final DeferredRegister<BlockEntityType<?>> WIRE_REGISTER = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ImmersiveFabrication.MODID);
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FluidPipeBlockEntity>> FLUID_PIPE = REGISTER.register("fluid_pipe", () -> BlockEntityType.Builder.of(FluidPipeBlockEntity::new, IFabBlocks.STRUCTURE.get(StructureType.FLUID_PIPE).get()).build(null));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<HeatingElementBlockEntity>> HEATING_ELEMENT = REGISTER.register("heating_element", () -> BlockEntityType.Builder.of(HeatingElementBlockEntity::new, IFabBlocks.STRUCTURE.get(StructureType.HEATING_ELEMENT).get()).build(null));

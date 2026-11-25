@@ -15,7 +15,7 @@ public class IFabCreativeTabs {
     static { REGISTER.register("main", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(IFabItems.HAMMER.get()))
             .title(Component.translatable("itemGroup." + ImmersiveFabrication.MODID))
-            .displayItems((params, output) -> IFabItems.REGISTER.getEntries().forEach(entry -> output.accept(entry.get())))
+            .displayItems((params, output) -> IFabItems.REGISTER.getEntries().stream().filter(entry -> entry.get() != IFabMultiblocks.COKE_OVEN.blockItem().get()).forEach(entry -> output.accept(entry.get())))
             .build()); }
 
     private IFabCreativeTabs() {}

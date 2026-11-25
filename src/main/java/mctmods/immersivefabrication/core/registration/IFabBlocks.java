@@ -31,7 +31,6 @@ import mctmods.immersivefabrication.core.IFabCommonConfig;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -69,7 +68,6 @@ public final class IFabBlocks {
     public static final Map<TreatedWoodType, DeferredBlock<StairBlock>> TREATED_WOOD_STAIRS = new EnumMap<>(TreatedWoodType.class);
     public static final Map<StructureType, DeferredBlock<? extends Block>> STRUCTURE = new EnumMap<>(StructureType.class);
     public static final DeferredBlock<FenceBlock> TREATED_WOOD_FENCE;
-    public static final DeferredBlock<LadderBlock> STEEL_LADDER;
     public static final DeferredBlock<FlaxBlock> FLAX = REGISTER.registerBlock("flax", FlaxBlock::new, IFabBlockProps.crop());
     public static final DeferredBlock<TreatedLogBlock> TREATED_LOG;
     public static final Map<String, DeferredBlock<? extends Block>> WIRES = new LinkedHashMap<>();
@@ -97,7 +95,6 @@ public final class IFabBlocks {
             TREATED_WOOD_STAIRS.put(type, stairs(type.id() + "_stairs", full, IFabBlockProps.wood(2.0F, 5.0F)));
         }
         TREATED_LOG = block("treated_log", TreatedLogBlock::new, IFabBlockProps.wood(2.0F, 5.0F));
-        STEEL_LADDER = block("steel_ladder", LadderBlock::new, IFabBlockProps.metal(3.0F, 15.0F).noOcclusion());
         STRUCTURE.put(StructureType.FLUID_PIPE, block(StructureType.FLUID_PIPE.id(), FluidPipeBlock::new, IFabBlockProps.metal(3.0F, 15.0F).noOcclusion().dynamicShape()));
         STRUCTURE.put(StructureType.FLUID_PLACER, block(StructureType.FLUID_PLACER.id(), Block::new, IFabBlockProps.metal(3.0F, 15.0F)));
         STRUCTURE.put(StructureType.HEATING_ELEMENT, block(StructureType.HEATING_ELEMENT.id(), HeatingElementBlock::new, IFabBlockProps.metal(3.0F, 15.0F)));

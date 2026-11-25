@@ -2,6 +2,7 @@ package mctmods.immersivefabrication.data.generators;
 
 import mctmods.immersivefabrication.ImmersiveFabrication;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -25,7 +26,6 @@ public class ModBlockTags extends BlockTagsProvider {
     private static final String[] NEEDS_IRON_METALS = {"lead", "silver", "nickel", "uranium"};
     private static final String[] NEEDS_IRON_STORAGE = {"lead", "silver", "nickel", "uranium", "constantan", "steel"};
     private static final String[] FENCES = {"steel_fence", "aluminum_fence"};
-    private static final String[] LADDER = {"steel_ladder"};
     private static final String[] MACHINES = {"fluid_pipe", "fluid_placer", "heating_element", "metal_barrel", "industrial_pump"};
     private static final String[] BRICKS = {"coke_brick", "blast_brick", "blast_brick_reinforced", "alloy_brick", "coal_coke_block"};
 
@@ -89,7 +89,7 @@ public class ModBlockTags extends BlockTagsProvider {
     }
 
     private void addMinecraft() {
-        blocks(BlockTags.CLIMBABLE, join(scaffoldings(), LADDER));
+        blocks(BlockTags.CLIMBABLE, scaffoldings());
         blocks(BlockTags.FENCES, "steel_fence", "aluminum_fence", "treated_wood_fence");
         blocks(BlockTags.LOGS, "treated_log");
         blocks(BlockTags.WOODEN_FENCES, "treated_wood_fence");
@@ -101,8 +101,9 @@ public class ModBlockTags extends BlockTagsProvider {
         blocks(BlockTags.NEEDS_STONE_TOOL, join(new String[]{"aluminum_block"}, oreBlocks(ALUMINUM)));
         blocks(BlockTags.NEEDS_IRON_TOOL, join(suffixed(NEEDS_IRON_STORAGE, "_block"), oreBlocks(NEEDS_IRON_METALS)));
         String[] cladding = flat(claddings(), id -> Stream.of(id, id + "_slab"));
-        String[] pickaxe = join(suffixed(TagNames.STORAGE_METALS, "_block"), cladding, oreBlocks(TagNames.ORE_METALS), TagNames.ENGINEERING, FENCES, withVariants(scaffoldings()), BRICKS, withVariants(TagNames.CONCRETES), LADDER, MACHINES);
+        String[] pickaxe = join(suffixed(TagNames.STORAGE_METALS, "_block"), cladding, oreBlocks(TagNames.ORE_METALS), TagNames.ENGINEERING, FENCES, withVariants(scaffoldings()), BRICKS, withVariants(TagNames.CONCRETES), MACHINES);
         IntrinsicTagAppender<Block> appender = blocks(BlockTags.MINEABLE_WITH_PICKAXE, pickaxe);
+        appender.add(IFabMultiblocks.COKE_OVEN.block().get());
         for (String id : IFabBlocks.WIRES.keySet()) { appender.addOptional(ResourceLocation.fromNamespaceAndPath(ImmersiveFabrication.MODID, id)); }
     }
 }

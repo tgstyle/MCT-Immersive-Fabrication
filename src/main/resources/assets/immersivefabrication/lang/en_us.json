@@ -164,7 +164,6 @@
   "block.immersivefabrication.treated_wood_packaged_slab": "Treated Wood Packaged Slab",
   "block.immersivefabrication.treated_wood_packaged_stairs": "Treated Wood Packaged Stairs",
   "block.immersivefabrication.treated_wood_fence": "Treated Wood Fence",
-  "block.immersivefabrication.steel_ladder": "Steel Ladder",
   "block.immersivefabrication.fluid_pipe": "Fluid Pipe",
   "block.immersivefabrication.fluid_placer": "Fluid Placer",
   "block.immersivefabrication.heating_element": "Heating Element",
@@ -192,5 +191,9 @@
   "fluid_type.immersivefabrication.creosote": "Creosote Oil",
   "fluid_type.immersivefabrication.biodiesel": "Biodiesel",
   "item.immersivefabrication.creosote_bucket": "Creosote Oil Bucket",
-  "item.immersivefabrication.biodiesel_bucket": "Biodiesel Bucket"
+  "item.immersivefabrication.biodiesel_bucket": "Biodiesel Bucket",
+  "block.immersivefabrication.raw_coke_oven_gas_fluid_block": "Raw Coke Oven Gas",
+  "fluid_type.immersivefabrication.raw_coke_oven_gas": "Raw Coke Oven Gas",
+  "item.immersivefabrication.raw_coke_oven_gas_bucket": "Raw Coke Oven Gas Bucket",
+  "block.immersivefabrication.coke_oven": "Coke Oven"
 }

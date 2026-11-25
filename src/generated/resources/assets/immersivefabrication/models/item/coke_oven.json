@@ -1,0 +1,31 @@
+{
+  "parent": "immersivefabrication:block/coke_oven",
+  "display": {
+    "fixed": {
+      "scale": [
+        0.0625,
+        0.0625,
+        0.0625
+      ]
+    },
+    "ground": {
+      "scale": [
+        0.0625,
+        0.0625,
+        0.0625
+      ]
+    },
+    "gui": {
+      "rotation": [
+        30,
+        225,
+        0
+      ],
+      "scale": [
+        0.1591,
+        0.1591,
+        0.1591
+      ]
+    }
+  }
+}
