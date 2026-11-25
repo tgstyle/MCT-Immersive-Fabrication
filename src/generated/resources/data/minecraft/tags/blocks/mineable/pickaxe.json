@@ -84,6 +84,7 @@
     "immersivefabrication:heating_element",
     "immersivefabrication:metal_barrel",
     "immersivefabrication:industrial_pump",
+    "immersivefabrication:coke_oven",
     {
       "id": "immersivefabrication:terminal_lv",
       "required": false

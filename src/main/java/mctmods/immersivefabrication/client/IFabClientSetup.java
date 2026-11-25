@@ -5,16 +5,22 @@ import com.immersiveconvergence.api.client.split.SplitModelHandler;
 import com.immersiveconvergence.api.fluid.FluidEntry;
 
 import mctmods.immersivefabrication.ImmersiveFabrication;
+import mctmods.immersivefabrication.client.gui.CokeOvenScreen;
+import mctmods.immersivefabrication.client.models.CokeOvenModels;
 import mctmods.immersivefabrication.client.models.FluidPipeGeometryLoader;
 import mctmods.immersivefabrication.client.models.FluidPipeTint;
 import mctmods.immersivefabrication.client.models.IndustrialPumpGeometryLoader;
 import mctmods.immersivefabrication.client.models.IndustrialPumpModels;
+import mctmods.immersivefabrication.client.renderer.CokeOvenRenderer;
 import mctmods.immersivefabrication.client.renderer.IndustrialPumpRenderer;
 import mctmods.immersivefabrication.core.registration.IFabBlockEntities;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
+import mctmods.immersivefabrication.core.registration.IFabMenuTypes;
 
 import java.util.List;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
@@ -33,7 +39,10 @@ public final class IFabClientSetup {
     private IFabClientSetup() {}
 
     @SubscribeEvent public static void onClientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> FluidEntry.registerRenderLayers(IFabFluids.ENTRIES));
+        event.enqueueWork(() -> {
+            FluidEntry.registerRenderLayers(IFabFluids.ENTRIES);
+            MenuScreens.register(IFabMenuTypes.COKE_OVEN.getType(), CokeOvenScreen::new);
+        });
     }
 
     @SubscribeEvent public static void onRegisterAdditional(ModelEvent.RegisterAdditional event) {
@@ -44,9 +53,13 @@ public final class IFabClientSetup {
         event.register("fluid_pipe", new FluidPipeGeometryLoader());
         event.register("industrial_pump_base", new IndustrialPumpGeometryLoader());
         IndustrialPumpModels.SHAFT = new StandaloneModel(ResourceLocation.fromNamespaceAndPath(ImmersiveFabrication.MODID, "dynamic/industrial_pump_shaft"));
+        CokeOvenModels.DOOR = new StandaloneModel(ResourceLocation.fromNamespaceAndPath(ImmersiveFabrication.MODID, "dynamic/coke_oven_door"));
     }
 
-    @SubscribeEvent public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) { event.registerBlockEntityRenderer(IFabBlockEntities.INDUSTRIAL_PUMP.get(), context -> new IndustrialPumpRenderer()); }
+    @SubscribeEvent public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(IFabBlockEntities.INDUSTRIAL_PUMP.get(), context -> new IndustrialPumpRenderer());
+        event.registerBlockEntityRenderer(IFabMultiblocks.COKE_OVEN.masterBE().get(), context -> new CokeOvenRenderer());
+    }
 
     @SubscribeEvent public static void onRegisterBlockColors(RegisterColorHandlersEvent.Block event) { event.register(FluidPipeTint::block, IFabBlocks.ENTRIES.get("fluid_pipe").get()); }
 

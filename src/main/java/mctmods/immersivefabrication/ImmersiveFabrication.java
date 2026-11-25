@@ -10,6 +10,8 @@ import mctmods.immersivefabrication.core.registration.IFabCreativeTabs;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
 import mctmods.immersivefabrication.core.registration.IFabItems;
 import mctmods.immersivefabrication.core.registration.IFabLootModifiers;
+import mctmods.immersivefabrication.core.registration.IFabMenuTypes;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 import mctmods.immersivefabrication.core.registration.IFabWireTypes;
 
 import com.mojang.logging.LogUtils;
@@ -31,12 +33,14 @@ public class ImmersiveFabrication {
         context.registerConfig(ModConfig.Type.COMMON, IFabCommonConfig.SPEC);
         CraftingHelper.register(IFabWiresCondition.Serializer.INSTANCE);
         if (IFabCommonConfig.wires()) { IFabWireTypes.register(); }
+        IFabMultiblocks.register();
         IFabBlocks.register(modEventBus);
         IFabBlockEntities.register(modEventBus);
         IFabItems.register(modEventBus);
         IFabCreativeTabs.register(modEventBus);
         IFabFluids.register(modEventBus);
         IFabLootModifiers.register(modEventBus);
+        IFabMenuTypes.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
     }
 

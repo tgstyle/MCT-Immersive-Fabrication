@@ -132,6 +132,7 @@ legacyForge {
         client {
             client()
             sourceSet = sourceSets.main
+            environment 'LD_LIBRARY_PATH', '/usr/lib64'
             systemProperty 'forge.logging.markers', ''
             programArguments.addAll '--username', 'tgstyle', '--width', '1920', '--height', '1080'
         }

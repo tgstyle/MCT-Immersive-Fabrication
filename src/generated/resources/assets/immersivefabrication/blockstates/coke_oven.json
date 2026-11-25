@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "facing=east,multiblockslave=false": {
+      "model": "immersivefabrication:block/coke_oven",
+      "y": 90
+    },
+    "facing=east,multiblockslave=true": {
+      "model": "immersivefabrication:block/coke_oven_empty"
+    },
+    "facing=north,multiblockslave=false": {
+      "model": "immersivefabrication:block/coke_oven"
+    },
+    "facing=north,multiblockslave=true": {
+      "model": "immersivefabrication:block/coke_oven_empty"
+    },
+    "facing=south,multiblockslave=false": {
+      "model": "immersivefabrication:block/coke_oven",
+      "y": 180
+    },
+    "facing=south,multiblockslave=true": {
+      "model": "immersivefabrication:block/coke_oven_empty"
+    },
+    "facing=west,multiblockslave=false": {
+      "model": "immersivefabrication:block/coke_oven",
+      "y": 270
+    },
+    "facing=west,multiblockslave=true": {
+      "model": "immersivefabrication:block/coke_oven_empty"
+    }
+  }
+}

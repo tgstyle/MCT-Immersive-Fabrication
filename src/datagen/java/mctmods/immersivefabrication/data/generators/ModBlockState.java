@@ -1,5 +1,6 @@
 package mctmods.immersivefabrication.data.generators;
 
+import com.immersiveconvergence.api.block.ModProperties;
 import com.immersiveconvergence.api.wires.fittings.ICPlatedFittingBlock;
 
 import com.immersiveconvergence.api.fluid.FluidEntry;
@@ -12,6 +13,7 @@ import mctmods.immersivefabrication.common.blocks.plant.flax.FlaxStage;
 import mctmods.immersivefabrication.common.util.IFabBlockNames;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 
 import java.util.Objects;
 import net.minecraft.core.Direction;
@@ -25,6 +27,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.client.model.generators.VariantBlockStateBuilder.PartialBlockstate;
@@ -195,6 +198,15 @@ public class ModBlockState extends BlockStateProvider {
         transformers();
     }
 
+    private void cokeOven() {
+        ModelFile body = existing("coke_oven");
+        ModelFile empty = models().getBuilder("coke_oven_empty").texture("particle", modLoc("multiblock/stone/coke_oven"));
+        getVariantBuilder(IFabMultiblocks.COKE_OVEN.block().get()).forAllStates(state -> {
+            if (state.getValue(ModProperties.MULTIBLOCKSLAVE)) { return ConfiguredModel.builder().modelFile(empty).build(); }
+            return ConfiguredModel.builder().modelFile(body).rotationY((int) ((state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)).build();
+        });
+    }
+
     private void fluids() {
         for (FluidEntry entry : IFabFluids.ENTRIES) { simpleBlock(entry.getBlock(), existing(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(entry.getBlock())).getPath())); }
     }
@@ -207,6 +219,7 @@ public class ModBlockState extends BlockStateProvider {
         wood();
         wires();
         flax();
+        cokeOven();
         fluids();
     }
 }

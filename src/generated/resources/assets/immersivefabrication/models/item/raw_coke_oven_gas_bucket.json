@@ -1,0 +1,6 @@
+{
+  "parent": "forge:item/bucket",
+  "flip_gas": true,
+  "fluid": "immersivefabrication:raw_coke_oven_gas",
+  "loader": "forge:fluid_container"
+}

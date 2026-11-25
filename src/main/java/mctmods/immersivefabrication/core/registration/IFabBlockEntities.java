@@ -22,7 +22,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @SuppressWarnings("ConstantConditions") public final class IFabBlockEntities {
-    private static final DeferredRegister<BlockEntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ImmersiveFabrication.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ImmersiveFabrication.MODID);
     private static final DeferredRegister<BlockEntityType<?>> WIRE_REGISTER = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ImmersiveFabrication.MODID);
     public static final RegistryObject<BlockEntityType<FluidPipeBlockEntity>> FLUID_PIPE = REGISTER.register("fluid_pipe", () -> BlockEntityType.Builder.of(FluidPipeBlockEntity::new, IFabBlocks.FLUID_PIPE.get()).build(null));
     public static final RegistryObject<BlockEntityType<HeatingElementBlockEntity>> HEATING_ELEMENT = REGISTER.register("heating_element", () -> BlockEntityType.Builder.of(HeatingElementBlockEntity::new, IFabBlocks.HEATING_ELEMENT.get()).build(null));

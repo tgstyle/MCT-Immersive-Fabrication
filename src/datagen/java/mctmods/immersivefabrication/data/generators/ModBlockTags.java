@@ -3,6 +3,7 @@ package mctmods.immersivefabrication.data.generators;
 import mctmods.immersivefabrication.ImmersiveFabrication;
 import mctmods.immersivefabrication.common.util.IFabBlockNames;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -102,6 +103,7 @@ public class ModBlockTags extends BlockTagsProvider {
         String[] cladding = flat(claddings(), id -> Stream.of(id, id + "_slab"));
         String[] pickaxe = join(suffixed(IFabBlockNames.STORAGE_METALS, "_block"), oreBlocks(IFabBlockNames.ORE_METALS), cladding, IFabBlockNames.ENGINEERING, frame("steel"), frame("aluminum"), withVariants(IFabBlockNames.CONCRETES), BRICKS, MACHINES);
         IntrinsicTagAppender<Block> appender = blocks(BlockTags.MINEABLE_WITH_PICKAXE, pickaxe);
+        appender.add(IFabMultiblocks.COKE_OVEN.block().get());
         for (String id : IFabBlocks.WIRES.keySet()) { appender.addOptional(ResourceLocation.fromNamespaceAndPath(ImmersiveFabrication.MODID, id)); }
     }
 }

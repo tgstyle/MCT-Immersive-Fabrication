@@ -28,7 +28,8 @@ public final class IFabFluids implements FluidRegisters {
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, ImmersiveFabrication.MODID);
     public static final FluidEntry CREOSOTE = make("creosote", 1100, 3000, new IFabFluidBlock.Fire(40, 400));
     public static final FluidEntry BIODIESEL = make("biodiesel", 789, 1000, new IFabFluidBlock.Fire(60, 200));
-    public static final List<FluidEntry> ENTRIES = List.of(CREOSOTE, BIODIESEL);
+    public static final FluidEntry RAW_COKE_OVEN_GAS = make("raw_coke_oven_gas", -700, 800, new IFabFluidBlock.Fire(100, 300));
+    public static final List<FluidEntry> ENTRIES = List.of(CREOSOTE, BIODIESEL, RAW_COKE_OVEN_GAS);
 
     private IFabFluids() {}
 
