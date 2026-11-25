@@ -2,9 +2,11 @@ package mctmods.immersivefabrication;
 
 import mctmods.immersivefabrication.core.IFabCommonConfig;
 import mctmods.immersivefabrication.core.proxy.CommonProxy;
+import mctmods.immersivefabrication.core.proxy.IFabGuiHandler;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
 import mctmods.immersivefabrication.core.registration.IFabItems;
+import mctmods.immersivefabrication.core.registration.IFabMultiblocks;
 import mctmods.immersivefabrication.core.registration.IFabSmelting;
 import mctmods.immersivefabrication.core.registration.IFabWireTypes;
 import mctmods.immersivefabrication.core.registration.IFabWorldGen;
@@ -16,6 +18,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,6 +28,8 @@ public class ImmersiveFabrication {
     public static final String MODID = "immersivefabrication";
     public static final String NAME = "Immersive Fabrication";
     public static final Logger LOGGER = LogManager.getLogger(MODID);
+
+    @Mod.Instance public static ImmersiveFabrication instance;
 
     @SidedProxy(clientSide = "mctmods.immersivefabrication.core.proxy.ClientProxy", serverSide = "mctmods.immersivefabrication.core.proxy.CommonProxy")
     public static CommonProxy proxy;
@@ -37,10 +42,12 @@ public class ImmersiveFabrication {
         if (IFabCommonConfig.wires()) { IFabWireTypes.register(); }
         IFabItems.register();
         IFabWorldGen.register();
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new IFabGuiHandler());
         proxy.preInit();
     }
 
     @EventHandler public void init(FMLInitializationEvent event) {
+        IFabMultiblocks.register();
         IFabSmelting.register();
         proxy.init();
     }

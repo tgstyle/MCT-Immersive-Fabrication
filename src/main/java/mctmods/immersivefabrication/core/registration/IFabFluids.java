@@ -19,19 +19,21 @@ public final class IFabFluids {
     public static final List<IFabFluidBlock> BLOCKS = new ArrayList<>();
     public static Fluid creosote;
     public static Fluid biodiesel;
+    public static Fluid cokeOvenGas;
 
     private IFabFluids() {}
 
     public static void register() {
-        creosote = fluid("creosote", 1100, 3000, 40, 400);
-        biodiesel = fluid("biodiesel", 789, 1000, 60, 200);
+        creosote = fluid("creosote", 1100, 3000, 40, 400, false);
+        biodiesel = fluid("biodiesel", 789, 1000, 60, 200, false);
+        cokeOvenGas = fluid("raw_coke_oven_gas", -700, 800, 100, 300, true);
     }
 
-    private static Fluid fluid(String name, int density, int viscosity, int flammability, int fireSpread) {
+    private static Fluid fluid(String name, int density, int viscosity, int flammability, int fireSpread, boolean gaseous) {
         if (FluidRegistry.isFluidRegistered(name)) { return FluidRegistry.getFluid(name); }
         ResourceLocation still = new ResourceLocation(ImmersiveFabrication.MODID, "blocks/fluid/" + name + "_still");
         ResourceLocation flowing = new ResourceLocation(ImmersiveFabrication.MODID, "blocks/fluid/" + name + "_flow");
-        Fluid fluid = new Fluid(name, still, flowing).setDensity(density).setViscosity(viscosity);
+        Fluid fluid = new Fluid(name, still, flowing).setDensity(density).setViscosity(viscosity).setGaseous(gaseous);
         FluidRegistry.registerFluid(fluid);
         FluidRegistry.addBucketForFluid(fluid);
         BLOCKS.add(new IFabFluidBlock(fluid, "fluid_" + name, flammability, fireSpread));

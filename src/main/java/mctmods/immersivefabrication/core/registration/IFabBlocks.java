@@ -41,6 +41,9 @@ import mctmods.immersivefabrication.common.blocks.stone.StoneDecorationType;
 import mctmods.immersivefabrication.common.blocks.wooden.TreatedFenceType;
 import mctmods.immersivefabrication.common.blocks.wooden.TreatedLogBlock;
 import mctmods.immersivefabrication.common.blocks.wooden.TreatedWoodType;
+import mctmods.immersivefabrication.common.multiblocks.stone.StoneMultiblockBlock;
+import mctmods.immersivefabrication.common.multiblocks.stone.cokeoven.logic.TileEntityCokeOvenMaster;
+import mctmods.immersivefabrication.common.multiblocks.stone.cokeoven.logic.TileEntityCokeOvenSlave;
 import mctmods.immersivefabrication.common.util.FenceBlock;
 import mctmods.immersivefabrication.common.util.SlabFamily;
 import mctmods.immersivefabrication.common.util.StairsBlock;
@@ -82,6 +85,7 @@ public final class IFabBlocks {
     public static FenceBlock<TreatedFenceType> treatedWoodFence;
     public static TreatedLogBlock treatedLog;
     public static ICBlockBase<StructureType> structure;
+    public static StoneMultiblockBlock stoneMultiblock;
     public static FlaxBlock flax;
     public static TerminalLvBlock terminalLv;
     public static InsulatorLvBlock insulatorLv;
@@ -115,6 +119,9 @@ public final class IFabBlocks {
         tile(TileEntityFluidPipe.class, "fluid_pipe");
         tile(TileEntityIndustrialPump.class, "industrial_pump");
         tile(TileEntityHeatingElement.class, "heating_element");
+        stoneMultiblock = new StoneMultiblockBlock();
+        tile(TileEntityCokeOvenSlave.class, "coke_oven_slave");
+        tile(TileEntityCokeOvenMaster.class, "coke_oven");
         flax = new FlaxBlock();
         if (IFabCommonConfig.wires()) { registerWireBlocks(); }
     }

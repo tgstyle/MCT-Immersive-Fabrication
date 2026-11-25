@@ -18,6 +18,13 @@
           "fluid": "biodiesel"
         }
       }
+    ],
+    "raw_coke_oven_gas": [
+      {
+        "custom": {
+          "fluid": "raw_coke_oven_gas"
+        }
+      }
     ]
   }
 }

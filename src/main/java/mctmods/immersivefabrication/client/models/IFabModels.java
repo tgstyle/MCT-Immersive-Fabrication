@@ -8,6 +8,7 @@ import com.immersiveconvergence.api.block.ICItemBase;
 import com.immersiveconvergence.api.client.ICCustomStateMapper;
 import com.immersiveconvergence.api.client.ICModels;
 import com.immersiveconvergence.api.client.ICObjParts;
+import com.immersiveconvergence.api.client.split.SplitModelHandler;
 import com.immersiveconvergence.api.wires.fittings.ICBlockFitting;
 import com.immersiveconvergence.client.ICModelSupport;
 
@@ -15,6 +16,7 @@ import mctmods.immersivefabrication.ImmersiveFabrication;
 import mctmods.immersivefabrication.common.blocks.metal.structure.StructureBlock;
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.TileEntityFluidPipe;
 import mctmods.immersivefabrication.common.fluids.IFabFluidBlock;
+import mctmods.immersivefabrication.common.multiblocks.stone.cokeoven.CokeOvenFacing;
 import mctmods.immersivefabrication.common.util.FenceBlock;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
@@ -35,6 +37,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.IRegistry;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -49,6 +52,7 @@ import net.minecraftforge.common.model.Models;
 import net.minecraftforge.common.model.TRSRTransformation;
 import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
@@ -56,7 +60,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.vecmath.Vector3f;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -66,7 +72,10 @@ import java.util.function.Function;
 public final class IFabModels {
 
     private static final int IRON_TINT = 0xFF9EA2A6;
+    private static final String COKE_OVEN_BODY = ICObjParts.part("body");
+    private static final String COKE_OVEN_DOOR = ICObjParts.BODY;
     private static final TRSRTransformation LIFT = new TRSRTransformation(new Vector3f(0.0F, 1.0F, 0.0F), null, null, null);
+    private static final TRSRTransformation ORIGIN = new TRSRTransformation(new Vector3f(-1.0F, -1.0F, -2.0F), null, null, null);
 
     private IFabModels() {}
 
@@ -110,12 +119,39 @@ public final class IFabModels {
         event.getModelRegistry().putObject(new ModelResourceLocation(name, "inventory,type=fluid_pipe"), pipe);
     }
 
+    private static IModel objModel(String path) { return ModelLoaderRegistry.getModelOrMissing(new ResourceLocation(ImmersiveFabrication.MODID, path)).process(ImmutableMap.of("flip-v", "true")); }
+
+    private static IBakedModel bakePart(IModel model, String part, IModelState rest) { return model.bake(ICObjParts.only(ImmutableSet.of(part), rest), DefaultVertexFormats.ITEM, ModelLoader.defaultTextureGetter()); }
+
+    private static IModelState moved(TRSRTransformation transform) { return part -> part.isPresent() ? Optional.empty() : Optional.of(transform); }
+
+    @SubscribeEvent(priority = EventPriority.HIGH) public static void bakeCokeOven(ModelBakeEvent event) {
+        IModel model = objModel("block/multiblock/stone/coke_oven/coke_oven.obj");
+        ResourceLocation name = Objects.requireNonNull(IFabBlocks.stoneMultiblock.getRegistryName());
+        IRegistry<ModelResourceLocation, IBakedModel> registry = event.getModelRegistry();
+        Map<Float, IBakedModel> bodies = new HashMap<>();
+        for (ModelResourceLocation key : new ArrayList<>(registry.getKeys())) {
+            String variant = key.getVariant();
+            if (!key.getNamespace().equals(name.getNamespace()) || !key.getPath().equals("stone_multiblock_coke_oven") || !"false".equals(SplitModelHandler.variantValue(variant, "_0multiblockslave"))) { continue; }
+            String facingName = SplitModelHandler.variantValue(variant, "facing");
+            EnumFacing facing = facingName == null ? null : EnumFacing.byName(facingName);
+            if (facing == null) { continue; }
+            float rotation = CokeOvenFacing.yRotation(facing);
+            registry.putObject(key, bodies.computeIfAbsent(rotation, angle -> bakePart(model, COKE_OVEN_BODY, moved(TRSRTransformation.blockCenterToCorner(new TRSRTransformation(null, TRSRTransformation.quatFromXYZDegrees(new Vector3f(0.0F, angle, 0.0F)), null, null)).compose(ORIGIN)))));
+        }
+        registry.putObject(cokeOvenDoor(), bakePart(model, COKE_OVEN_DOOR, part -> Optional.empty()));
+    }
+
+    private static ModelResourceLocation cokeOvenDoor() { return new ModelResourceLocation(Objects.requireNonNull(IFabBlocks.stoneMultiblock.getRegistryName()), "inventory,type=coke_oven_door"); }
+
+    public static List<BakedQuad> cokeOvenDoorQuads() { return Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getModelManager().getModel(cokeOvenDoor()).getQuads(null, null, 0L); }
+
     @SubscribeEvent public static void bakePump(ModelBakeEvent event) {
-        IModel model = ModelLoaderRegistry.getModelOrMissing(new ResourceLocation(ImmersiveFabrication.MODID, "block/metal_device/industrial_pump.obj")).process(ImmutableMap.of("flip-v", "true"));
+        IModel model = objModel("block/metal_device/industrial_pump.obj");
         Function<ResourceLocation, TextureAtlasSprite> getter = ModelLoader.defaultTextureGetter();
-        IBakedModel base = model.bake(ICObjParts.only(ImmutableSet.of(ICObjParts.BODY), part -> part.isPresent() ? Optional.empty() : Optional.of(LIFT)), DefaultVertexFormats.ITEM, getter);
-        IBakedModel top = model.bake(ICObjParts.only(ImmutableSet.of(ICObjParts.part("motor")), part -> Optional.empty()), DefaultVertexFormats.ITEM, getter);
-        IBakedModel shaft = model.bake(ICObjParts.only(ImmutableSet.of(ICObjParts.part("shaft")), part -> Optional.empty()), DefaultVertexFormats.ITEM, getter);
+        IBakedModel base = bakePart(model, ICObjParts.BODY, moved(LIFT));
+        IBakedModel top = bakePart(model, ICObjParts.part("motor"), part -> Optional.empty());
+        IBakedModel shaft = bakePart(model, ICObjParts.part("shaft"), part -> Optional.empty());
         ResourceLocation name = Objects.requireNonNull(IFabBlocks.structure.getRegistryName());
         event.getModelRegistry().putObject(pumpShaft(), shaft);
         event.getModelRegistry().putObject(new ModelResourceLocation(name, "boolean0=false,facing=north,type=industrial_pump"), new PumpBaseBakedModel(base, getter));

@@ -2,9 +2,11 @@ package mctmods.immersivefabrication.common.items;
 
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.TileEntityHeatingElement;
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.TileEntityIndustrialPump;
+import mctmods.immersivefabrication.common.multiblocks.stone.cokeoven.CokeOvenMultiblock;
 
 import com.immersiveconvergence.api.block.BlockContext;
 import com.immersiveconvergence.api.block.ICItemBase;
+import com.immersiveconvergence.api.multiblock.MultiblockRegistry;
 import com.immersiveconvergence.api.wires.fittings.ICTileEntityFitting;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,6 +34,10 @@ public class ScrewdriverItem extends ICItemBase {
 
     @Override @Nonnull public EnumActionResult onItemUseFirst(@Nonnull EntityPlayer player, @Nonnull World world, @Nonnull BlockPos pos, @Nonnull EnumFacing side, float hitX, float hitY, float hitZ, @Nonnull EnumHand hand) {
         TileEntity tile = world.getTileEntity(pos);
+        if (tile == null && !player.isSneaking()) {
+            if (!world.isRemote && MultiblockRegistry.formFirstMatching(world, pos, side, player, player.getHeldItem(hand), "IFab:CokeOven"::equals)) { return EnumActionResult.SUCCESS; }
+            if (world.isRemote && CokeOvenMultiblock.instance.isBlockTrigger(world.getBlockState(pos))) { return EnumActionResult.SUCCESS; }
+        }
         if (tile instanceof TileEntityIndustrialPump) { return configurePump((TileEntityIndustrialPump)tile, world, player, side); }
         if (tile instanceof TileEntityHeatingElement) { return turnHeater((TileEntityHeatingElement)tile, world, player, side); }
         if (!(tile instanceof ICTileEntityFitting) || !((ICTileEntityFitting)tile).platable()) { return EnumActionResult.PASS; }
