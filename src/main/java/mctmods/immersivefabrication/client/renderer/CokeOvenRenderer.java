@@ -27,12 +27,9 @@ import javax.annotation.Nonnull;
 
 public class CokeOvenRenderer extends TileEntitySpecialRenderer<TileEntityCokeOvenMaster> {
     private static final float DOOR_SIGN = 1.0F;
-    private static final double ORIGIN_X = -1.0D;
-    private static final double ORIGIN_Y = -1.0D;
-    private static final double ORIGIN_Z = -2.0D;
-    private static final double PIVOT_X = 1.0D;
-    private static final double PIVOT_Y = 1.5D;
-    private static final double PIVOT_Z = 3.0D;
+    private static final double PIVOT_X = 0.0D;
+    private static final double PIVOT_Y = 0.5D;
+    private static final double PIVOT_Z = 1.0D;
     private static final double CHAMBER_Z = -1.0D;
     private static final float ITEM_SCALE = 0.6F;
     private static final float FIRE_MIN = 0.15F;
@@ -62,7 +59,7 @@ public class CokeOvenRenderer extends TileEntitySpecialRenderer<TileEntityCokeOv
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder buffer = tessellator.getBuffer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate(ORIGIN_X + PIVOT_X, ORIGIN_Y + PIVOT_Y, ORIGIN_Z + PIVOT_Z);
+        GlStateManager.translate(PIVOT_X, PIVOT_Y, PIVOT_Z);
         GlStateManager.rotate(doorAngle(oven, partialTicks), 0.0F, 1.0F, 0.0F);
         GlStateManager.translate(-PIVOT_X, -PIVOT_Y, -PIVOT_Z);
         RenderHelper.disableStandardItemLighting();

@@ -74,7 +74,6 @@ public final class IFabModels {
     private static final int IRON_TINT = 0xFF9EA2A6;
     private static final String COKE_OVEN_BODY = ICObjParts.part("body");
     private static final String COKE_OVEN_DOOR = ICObjParts.BODY;
-    private static final TRSRTransformation ORIGIN = new TRSRTransformation(new Vector3f(-1.0F, -1.0F, -2.0F), null, null, null);
 
     private IFabModels() {}
 
@@ -136,7 +135,7 @@ public final class IFabModels {
             EnumFacing facing = facingName == null ? null : EnumFacing.byName(facingName);
             if (facing == null) { continue; }
             float rotation = CokeOvenFacing.yRotation(facing);
-            registry.putObject(key, bodies.computeIfAbsent(rotation, angle -> bakePart(model, COKE_OVEN_BODY, moved(TRSRTransformation.blockCenterToCorner(new TRSRTransformation(null, TRSRTransformation.quatFromXYZDegrees(new Vector3f(0.0F, angle, 0.0F)), null, null)).compose(ORIGIN)))));
+            registry.putObject(key, bodies.computeIfAbsent(rotation, angle -> bakePart(model, COKE_OVEN_BODY, moved(TRSRTransformation.blockCenterToCorner(new TRSRTransformation(null, TRSRTransformation.quatFromXYZDegrees(new Vector3f(0.0F, angle, 0.0F)), null, null))))));
         }
         registry.putObject(cokeOvenDoor(), bakePart(model, COKE_OVEN_DOOR, part -> Optional.empty()));
     }
