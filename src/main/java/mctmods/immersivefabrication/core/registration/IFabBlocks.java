@@ -60,6 +60,7 @@ public final class IFabBlocks {
     public static final Map<ScaffoldingType, DeferredBlock<SlabBlock>> SCAFFOLDING_SLABS = new EnumMap<>(ScaffoldingType.class);
     public static final Map<ScaffoldingType, DeferredBlock<StairBlock>> SCAFFOLDING_STAIRS = new EnumMap<>(ScaffoldingType.class);
     public static final Map<StoneDecorationType, DeferredBlock<Block>> STONE_DECORATION = new EnumMap<>(StoneDecorationType.class);
+    public static final Map<StoneDecorationType, DeferredBlock<SlabBlock>> BRICK_SLABS = new EnumMap<>(StoneDecorationType.class);
     public static final Map<ConcreteType, DeferredBlock<Block>> CONCRETE = new EnumMap<>(ConcreteType.class);
     public static final Map<ConcreteType, DeferredBlock<SlabBlock>> CONCRETE_SLABS = new EnumMap<>(ConcreteType.class);
     public static final Map<ConcreteType, DeferredBlock<StairBlock>> CONCRETE_STAIRS = new EnumMap<>(ConcreteType.class);
@@ -137,7 +138,10 @@ public final class IFabBlocks {
     }
 
     private static void registerStone() {
-        for (StoneDecorationType type : StoneDecorationType.values()) { STONE_DECORATION.put(type, block(type.id(), Block::new, IFabBlockProps.stone(2.0F, 10.0F))); }
+        for (StoneDecorationType type : StoneDecorationType.values()) {
+            STONE_DECORATION.put(type, block(type.id(), Block::new, IFabBlockProps.stone(2.0F, 10.0F)));
+            if (type != StoneDecorationType.COAL_COKE_BLOCK) { BRICK_SLABS.put(type, block(type.id() + "_slab", SlabBlock::new, IFabBlockProps.stone(2.0F, 10.0F))); }
+        }
         for (ConcreteType type : ConcreteType.values()) {
             DeferredBlock<Block> full = block(type.id(), Block::new, IFabBlockProps.stone(2.0F, 10.0F));
             CONCRETE.put(type, full);

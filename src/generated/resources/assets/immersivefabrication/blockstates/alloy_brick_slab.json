@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersivefabrication:block/alloy_brick_slab"
+    },
+    "type=double": {
+      "model": "immersivefabrication:block/alloy_brick"
+    },
+    "type=top": {
+      "model": "immersivefabrication:block/alloy_brick_slab_top"
+    }
+  }
+}

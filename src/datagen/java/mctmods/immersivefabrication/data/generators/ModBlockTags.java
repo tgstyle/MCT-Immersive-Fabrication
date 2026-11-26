@@ -27,6 +27,7 @@ public class ModBlockTags extends BlockTagsProvider {
     private static final String[] NEEDS_IRON_STORAGE = {"lead", "silver", "nickel", "uranium", "constantan", "steel"};
     private static final String[] FENCES = {"steel_fence", "aluminum_fence"};
     private static final String[] MACHINES = {"fluid_pipe", "fluid_placer", "heating_element", "metal_barrel", "industrial_pump"};
+    private static final String[] BRICK_SLAB_BASES = {"coke_brick", "blast_brick", "blast_brick_reinforced", "alloy_brick"};
     private static final String[] BRICKS = {"coke_brick", "blast_brick", "blast_brick_reinforced", "alloy_brick", "coal_coke_block"};
 
     public ModBlockTags(PackOutput output, CompletableFuture<Provider> lookupProvider, ExistingFileHelper existingFileHelper) { super(output, lookupProvider, ImmersiveFabrication.MODID, existingFileHelper); }
@@ -95,13 +96,13 @@ public class ModBlockTags extends BlockTagsProvider {
         blocks(BlockTags.WOODEN_FENCES, "treated_wood_fence");
         blocks(BlockTags.WOODEN_SLABS, suffixed(treatedWood(), "_slab"));
         blocks(BlockTags.WOODEN_STAIRS, suffixed(treatedWood(), "_stairs"));
-        blocks(BlockTags.SLABS, join(suffixed(claddings(), "_slab"), suffixed(scaffoldings(), "_slab"), suffixed(TagNames.CONCRETES, "_slab"), suffixed(treatedWood(), "_slab")));
+        blocks(BlockTags.SLABS, join(suffixed(claddings(), "_slab"), suffixed(scaffoldings(), "_slab"), suffixed(BRICK_SLAB_BASES, "_slab"), suffixed(TagNames.CONCRETES, "_slab"), suffixed(treatedWood(), "_slab")));
         blocks(BlockTags.STAIRS, join(suffixed(scaffoldings(), "_stairs"), suffixed(TagNames.CONCRETES, "_stairs"), suffixed(treatedWood(), "_stairs")));
         blocks(BlockTags.MINEABLE_WITH_AXE, join(withVariants(treatedWood()), new String[]{"treated_wood_fence", "treated_log"}));
         blocks(BlockTags.NEEDS_STONE_TOOL, join(new String[]{"aluminum_block"}, oreBlocks(ALUMINUM)));
         blocks(BlockTags.NEEDS_IRON_TOOL, join(suffixed(NEEDS_IRON_STORAGE, "_block"), oreBlocks(NEEDS_IRON_METALS)));
         String[] cladding = flat(claddings(), id -> Stream.of(id, id + "_slab"));
-        String[] pickaxe = join(suffixed(TagNames.STORAGE_METALS, "_block"), cladding, oreBlocks(TagNames.ORE_METALS), TagNames.ENGINEERING, FENCES, withVariants(scaffoldings()), BRICKS, withVariants(TagNames.CONCRETES), MACHINES);
+        String[] pickaxe = join(suffixed(TagNames.STORAGE_METALS, "_block"), cladding, oreBlocks(TagNames.ORE_METALS), TagNames.ENGINEERING, FENCES, withVariants(scaffoldings()), BRICKS, suffixed(BRICK_SLAB_BASES, "_slab"), withVariants(TagNames.CONCRETES), MACHINES);
         IntrinsicTagAppender<Block> appender = blocks(BlockTags.MINEABLE_WITH_PICKAXE, pickaxe);
         appender.add(IFabMultiblocks.COKE_OVEN.block().get());
         for (String id : IFabBlocks.WIRES.keySet()) { appender.addOptional(ResourceLocation.fromNamespaceAndPath(ImmersiveFabrication.MODID, id)); }

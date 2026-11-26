@@ -70,6 +70,10 @@ public final class BlockRecipes extends RecipeBase {
         shaped("stone", "concrete", "concrete", 8, "SCS/GBG/SCS", 'C', vanilla(Items.CLAY_BALL), 'S', vanilla(Items.SAND), 'G', vanilla(Items.GRAVEL), 'B', vanilla(Items.WATER_BUCKET));
         shaped("stone", "concrete_slag", "concrete", 12, "SCS/GBG/SCS", 'C', vanilla(Items.CLAY_BALL), 'S', in("slag"), 'G', vanilla(Items.GRAVEL), 'B', vanilla(Items.WATER_BUCKET));
         shaped("stone", "flaxcrete", "flaxcrete", 6, "CCC/HHH/CCC", 'C', vanilla(Items.CLAY_BALL), 'H', in("flax_fiber"));
+        for (String name : new String[]{"coke_brick", "blast_brick", "blast_brick_reinforced", "alloy_brick"}) {
+            slab("stone", name + "_slab", name, 'B');
+            back("stone", name + "_slab_back", name, 'S');
+        }
         for (String name : TagNames.CONCRETES) {
             slab("stone", name + "_slab", name, 'B');
             back("stone", name + "_slab_back", name, 'S');

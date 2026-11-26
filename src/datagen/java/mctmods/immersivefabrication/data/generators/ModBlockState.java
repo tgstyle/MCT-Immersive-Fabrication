@@ -79,6 +79,12 @@ public class ModBlockState extends BlockStateProvider {
         if (withStairs) { stairs(id, tex(texture), tex(texture), false); }
     }
 
+    private void brick(String id, String texture) {
+        ModelFile base = models().cubeAll(id, tex(texture));
+        simpleBlock(block(id), base);
+        slabs(id, base, tex(texture), tex(texture), false);
+    }
+
     private void scaffolding(String metal, String type) {
         String id = metal + "_scaffolding_" + type;
         ResourceLocation side = tex("metal/scaffolding_" + metal);
@@ -171,10 +177,10 @@ public class ModBlockState extends BlockStateProvider {
 
     private void stone() {
         for (String name : TagNames.CONCRETES) { family(name, "stone/" + name, true); }
-        cube("coke_brick", "stone/cokebrick");
-        cube("blast_brick", "stone/blastbrick");
-        cube("blast_brick_reinforced", "stone/blastbrick_reinforced");
-        cube("alloy_brick", "stone/alloybrick");
+        brick("coke_brick", "stone/cokebrick");
+        brick("blast_brick", "stone/blastbrick");
+        brick("blast_brick_reinforced", "stone/blastbrick_reinforced");
+        brick("alloy_brick", "stone/alloybrick");
         cube("coal_coke_block", "coke");
     }
 
