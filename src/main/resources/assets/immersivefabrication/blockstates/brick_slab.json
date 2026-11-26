@@ -1,0 +1,16 @@
+{
+	"forge_marker": 1,
+	"defaults": {"transform": "forge:default-block", "model": "half_slab"},
+	"variants": {
+		"inventory,type=coke_brick": [{"textures": {"bottom": "immersivefabrication:blocks/stone/cokebrick", "top": "immersivefabrication:blocks/stone/cokebrick", "side": "immersivefabrication:blocks/stone/cokebrick"}}],
+		"inventory,type=blast_brick": [{"textures": {"bottom": "immersivefabrication:blocks/stone/blastbrick", "top": "immersivefabrication:blocks/stone/blastbrick", "side": "immersivefabrication:blocks/stone/blastbrick"}}],
+		"inventory,type=blast_brick_reinforced": [{"textures": {"bottom": "immersivefabrication:blocks/stone/blastbrick_reinforced", "top": "immersivefabrication:blocks/stone/blastbrick_reinforced", "side": "immersivefabrication:blocks/stone/blastbrick_reinforced"}}],
+		"inventory,type=alloy_brick": [{"textures": {"bottom": "immersivefabrication:blocks/stone/alloybrick", "top": "immersivefabrication:blocks/stone/alloybrick", "side": "immersivefabrication:blocks/stone/alloybrick"}}],
+		"type": {
+			"coke_brick": {"textures": {"bottom": "immersivefabrication:blocks/stone/cokebrick", "top": "immersivefabrication:blocks/stone/cokebrick", "side": "immersivefabrication:blocks/stone/cokebrick"}},
+			"blast_brick": {"textures": {"bottom": "immersivefabrication:blocks/stone/blastbrick", "top": "immersivefabrication:blocks/stone/blastbrick", "side": "immersivefabrication:blocks/stone/blastbrick"}},
+			"blast_brick_reinforced": {"textures": {"bottom": "immersivefabrication:blocks/stone/blastbrick_reinforced", "top": "immersivefabrication:blocks/stone/blastbrick_reinforced", "side": "immersivefabrication:blocks/stone/blastbrick_reinforced"}},
+			"alloy_brick": {"textures": {"bottom": "immersivefabrication:blocks/stone/alloybrick", "top": "immersivefabrication:blocks/stone/alloybrick", "side": "immersivefabrication:blocks/stone/alloybrick"}}
+		}
+	}
+}

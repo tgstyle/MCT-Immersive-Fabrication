@@ -36,6 +36,7 @@ import mctmods.immersivefabrication.common.blocks.metal.structure.logic.TileEnti
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.TileEntityHeatingElement;
 import mctmods.immersivefabrication.common.blocks.metal.structure.logic.TileEntityIndustrialPump;
 import mctmods.immersivefabrication.common.blocks.plant.flax.FlaxBlock;
+import mctmods.immersivefabrication.common.blocks.stone.BrickType;
 import mctmods.immersivefabrication.common.blocks.stone.ConcreteType;
 import mctmods.immersivefabrication.common.blocks.stone.StoneDecorationType;
 import mctmods.immersivefabrication.common.blocks.wooden.TreatedFenceType;
@@ -76,6 +77,7 @@ public final class IFabBlocks {
     public static SlabFamily<ScaffoldingType> scaffoldingSlab;
     public static final List<StairsBlock> scaffoldingStairs = new ArrayList<>();
     public static ICBlockBase<StoneDecorationType> stoneDecoration;
+    public static SlabFamily<BrickType> brickSlab;
     public static ICBlockBase<ConcreteType> concrete;
     public static SlabFamily<ConcreteType> concreteSlab;
     public static final List<StairsBlock> concreteStairs = new ArrayList<>();
@@ -165,6 +167,7 @@ public final class IFabBlocks {
 
     private static void registerStoneDecoration() {
         stoneDecoration = block("stone_decoration", Material.ROCK, StoneDecorationType.class, 2.0F, 10.0F);
+        brickSlab = slabs(new SlabFamily<>(stoneDecoration, BrickType.class, "brick_slab"), 2.0F, 10.0F);
         concrete = block("concrete", Material.ROCK, ConcreteType.class, 2.0F, 10.0F);
         concreteSlab = slabs(concrete, "concrete_slab", 2.0F, 10.0F);
         stairs(concreteStairs, concrete, "concrete_stairs", BlockRenderLayer.SOLID, 2.0F, 10.0F);
@@ -186,8 +189,9 @@ public final class IFabBlocks {
         return block;
     }
 
-    private static <E extends Enum<E> & IBlockEnum> SlabFamily<E> slabs(ICBlockBase<E> full, String name, float hardness, float resistance) {
-        SlabFamily<E> family = new SlabFamily<>(full, name);
+    private static <E extends Enum<E> & IBlockEnum> SlabFamily<E> slabs(ICBlockBase<E> full, String name, float hardness, float resistance) { return slabs(new SlabFamily<>(full, name), hardness, resistance); }
+
+    private static <E extends Enum<E> & IBlockEnum> SlabFamily<E> slabs(SlabFamily<E> family, float hardness, float resistance) {
         strength(family.bottom, hardness, resistance);
         strength(family.top, hardness, resistance);
         return family;

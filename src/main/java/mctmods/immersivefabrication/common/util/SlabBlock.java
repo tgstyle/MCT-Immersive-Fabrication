@@ -29,7 +29,7 @@ public class SlabBlock<E extends Enum<E> & ICBlockBase.IBlockEnum> extends ICBlo
     private final boolean top;
 
     public SlabBlock(SlabFamily<E> family, String name, boolean top, Class<? extends ItemBlock> itemBlock) {
-        super(family.full.context, name, family.full.getDefaultState().getMaterial(), PropertyEnum.create("type", family.full.property.getValueClass()), itemBlock);
+        super(family.full.context, name, family.full.getDefaultState().getMaterial(), PropertyEnum.create("type", family.types), itemBlock);
         this.family = family;
         this.top = top;
         setAllNotNormalBlock();
