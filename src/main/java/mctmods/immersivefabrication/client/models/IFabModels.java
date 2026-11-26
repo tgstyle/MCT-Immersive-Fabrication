@@ -74,7 +74,6 @@ public final class IFabModels {
     private static final int IRON_TINT = 0xFF9EA2A6;
     private static final String COKE_OVEN_BODY = ICObjParts.part("body");
     private static final String COKE_OVEN_DOOR = ICObjParts.BODY;
-    private static final TRSRTransformation LIFT = new TRSRTransformation(new Vector3f(0.0F, 1.0F, 0.0F), null, null, null);
     private static final TRSRTransformation ORIGIN = new TRSRTransformation(new Vector3f(-1.0F, -1.0F, -2.0F), null, null, null);
 
     private IFabModels() {}
@@ -147,9 +146,9 @@ public final class IFabModels {
     public static List<BakedQuad> cokeOvenDoorQuads() { return Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getModelManager().getModel(cokeOvenDoor()).getQuads(null, null, 0L); }
 
     @SubscribeEvent public static void bakePump(ModelBakeEvent event) {
-        IModel model = objModel("block/metal_device/industrial_pump.obj");
+        IModel model = objModel("block/metal_device/industrial_pump_top.obj");
         Function<ResourceLocation, TextureAtlasSprite> getter = ModelLoader.defaultTextureGetter();
-        IBakedModel base = bakePart(model, ICObjParts.BODY, moved(LIFT));
+        IBakedModel base = bakePart(objModel("block/metal_device/industrial_pump.obj"), ICObjParts.BODY, part -> Optional.empty());
         IBakedModel top = bakePart(model, ICObjParts.part("motor"), part -> Optional.empty());
         IBakedModel shaft = bakePart(model, ICObjParts.part("shaft"), part -> Optional.empty());
         ResourceLocation name = Objects.requireNonNull(IFabBlocks.structure.getRegistryName());

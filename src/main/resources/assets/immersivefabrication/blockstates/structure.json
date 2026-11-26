@@ -10,7 +10,6 @@
 			"model": "immersivefabrication:metal_device/industrial_pump.obj",
 			"custom": {"flip-v": true},
 			"transform": {
-				"translation": [0, 0.28125, 0],
 				"scale": [0.28125, 0.28125, 0.28125],
 				"firstperson_righthand": {"scale": [0.75, 0.75, 0.75], "rotation": [{"y": 180}]},
 				"firstperson_lefthand": {"scale": [0.75, 0.75, 0.75], "rotation": [{"y": 180}]},
@@ -20,7 +19,7 @@
 				"gui": {"translation": [0, -0.15625, 0], "rotation": [{"x": 30}, {"y": 135}], "scale": [1.5, 1.5, 1.5]}
 			}
 		}],
-		"inventory,type=industrial_pump_top": [{"model": "immersivefabrication:metal_device/industrial_pump.obj", "custom": {"flip-v": true}}],
+		"inventory,type=industrial_pump_top": [{"model": "immersivefabrication:metal_device/industrial_pump_top.obj", "custom": {"flip-v": true}}],
 		"facing": {
 			"north": {},
 			"east": {"y": 90},
@@ -34,8 +33,8 @@
 			"fluid_placer": {"textures": {"all": "immersivefabrication:blocks/metal/fluid_placer_side_none"}},
 			"heating_element": {"model": "immersivefabrication:heating_element"},
 			"metal_barrel": {"textures": {"end": "immersivefabrication:blocks/metal/barrel_iron_none", "side": "immersivefabrication:blocks/metal/barrel_iron_side"}, "model": "cube_column"},
-			"industrial_pump": {"model": "immersivefabrication:metal_device/industrial_pump.obj", "custom": {"flip-v": true}},
-			"industrial_pump_top": {"model": "immersivefabrication:metal_device/industrial_pump.obj", "custom": {"flip-v": true}}
+			"industrial_pump": {"model": "immersivefabrication:metal_device/industrial_pump_top.obj", "custom": {"flip-v": true}},
+			"industrial_pump_top": {"model": "immersivefabrication:metal_device/industrial_pump_top.obj", "custom": {"flip-v": true}}
 		},
 		"boolean0": {
 			"false": {},
