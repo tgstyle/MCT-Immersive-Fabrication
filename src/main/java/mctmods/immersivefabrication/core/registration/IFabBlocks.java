@@ -98,10 +98,10 @@ public final class IFabBlocks {
 
     private static void registerStone() {
         for (String name : IFabBlockNames.CONCRETES) { withSlabAndStairs(name, StoneProperties::concrete); }
-        full("coke_brick", StoneProperties::cokeBrick);
-        full("blast_brick", StoneProperties::blastBrick);
-        full("blast_brick_reinforced", StoneProperties::reinforcedBlastBrick);
-        full("alloy_brick", StoneProperties::alloyBrick);
+        fullWithSlab("coke_brick", StoneProperties::cokeBrick);
+        fullWithSlab("blast_brick", StoneProperties::blastBrick);
+        fullWithSlab("blast_brick_reinforced", StoneProperties::reinforcedBlastBrick);
+        fullWithSlab("alloy_brick", StoneProperties::alloyBrick);
         full("coal_coke_block", StoneProperties::coalCokeBlock);
     }
 
@@ -127,6 +127,11 @@ public final class IFabBlocks {
     private static RegistryObject<BaseBlock> full(String id, Supplier<Properties> properties) { return add(id, () -> new BaseBlock(properties.get(), false)); }
 
     private static void slab(String id, Supplier<Properties> properties) { add(id + "_slab", () -> new SlabBlock(properties.get())); }
+
+    private static void fullWithSlab(String id, Supplier<Properties> properties) {
+        full(id, properties);
+        slab(id, () -> properties.get().strength(2.0F, 10.0F));
+    }
 
     private static void withSlabAndStairs(String id, Supplier<Properties> properties) {
         RegistryObject<BaseBlock> base = full(id, properties);

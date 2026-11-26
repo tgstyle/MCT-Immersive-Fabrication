@@ -172,10 +172,10 @@ public class ModBlockState extends BlockStateProvider {
 
     private void stone() {
         for (String name : IFabBlockNames.CONCRETES) { family(name, "stone/" + name, true); }
-        cube("coke_brick", "stone/cokebrick");
-        cube("blast_brick", "stone/blastbrick");
-        cube("blast_brick_reinforced", "stone/blastbrick_reinforced");
-        cube("alloy_brick", "stone/alloybrick");
+        family("coke_brick", "stone/cokebrick", false);
+        family("blast_brick", "stone/blastbrick", false);
+        family("blast_brick_reinforced", "stone/blastbrick_reinforced", false);
+        family("alloy_brick", "stone/alloybrick", false);
         cube("coal_coke_block", "coke");
     }
 

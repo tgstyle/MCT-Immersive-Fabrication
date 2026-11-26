@@ -8,6 +8,7 @@ public final class IFabBlockNames {
     public static final String[] FRAME_METALS = {"steel", "aluminum"};
     public static final String[] SCAFFOLDING_TYPES = {"standard", "grate_top", "wooden_top"};
     public static final String[] CONCRETES = {"concrete", "flaxcrete"};
+    public static final String[] BRICKS = {"coke_brick", "blast_brick", "blast_brick_reinforced", "alloy_brick"};
     public static final String[] TREATED_WOOD = {"horizontal", "vertical", "packaged"};
     public static final String[] STRUCTURES = {"fluid_placer", "metal_barrel"};
 

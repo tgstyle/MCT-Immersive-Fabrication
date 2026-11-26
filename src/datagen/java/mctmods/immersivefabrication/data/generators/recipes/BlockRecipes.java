@@ -72,6 +72,10 @@ public final class BlockRecipes extends RecipeBase {
         shaped("stone", "concrete", "concrete", 8, "SCS/GBG/SCS", 'C', vanilla(Items.CLAY_BALL), 'S', tag("sand"), 'G', vanilla(Items.GRAVEL), 'B', vanilla(Items.WATER_BUCKET));
         shaped("stone", "concrete_slag", "concrete", 12, "SCS/GBG/SCS", 'C', vanilla(Items.CLAY_BALL), 'S', tag("slag"), 'G', vanilla(Items.GRAVEL), 'B', vanilla(Items.WATER_BUCKET));
         shaped("stone", "flaxcrete", "flaxcrete", 6, "CCC/HHH/CCC", 'C', vanilla(Items.CLAY_BALL), 'H', in("flax_fiber"));
+        for (String name : IFabBlockNames.BRICKS) {
+            slab("stone", name + "_slab", name, 'B');
+            back("stone", name + "_slab_back", name, 'S');
+        }
         for (String name : IFabBlockNames.CONCRETES) {
             slab("stone", name + "_slab", name, 'B');
             back("stone", name + "_slab_back", name, 'S');

@@ -95,13 +95,13 @@ public class ModBlockTags extends BlockTagsProvider {
         blocks(BlockTags.WOODEN_FENCES, "treated_wood_fence");
         blocks(BlockTags.WOODEN_SLABS, suffixed(treatedWood(), "_slab"));
         blocks(BlockTags.WOODEN_STAIRS, suffixed(treatedWood(), "_stairs"));
-        blocks(BlockTags.SLABS, join(suffixed(claddings(), "_slab"), suffixed(scaffoldings(), "_slab"), suffixed(IFabBlockNames.CONCRETES, "_slab"), suffixed(treatedWood(), "_slab")));
+        blocks(BlockTags.SLABS, join(suffixed(claddings(), "_slab"), suffixed(scaffoldings(), "_slab"), suffixed(IFabBlockNames.CONCRETES, "_slab"), suffixed(IFabBlockNames.BRICKS, "_slab"), suffixed(treatedWood(), "_slab")));
         blocks(BlockTags.STAIRS, join(suffixed(scaffoldings(), "_stairs"), suffixed(IFabBlockNames.CONCRETES, "_stairs"), suffixed(treatedWood(), "_stairs")));
         blocks(BlockTags.MINEABLE_WITH_AXE, join(withVariants(treatedWood()), new String[]{"treated_wood_fence", "treated_log"}));
         blocks(BlockTags.NEEDS_STONE_TOOL, join(new String[]{"aluminum_block"}, oreBlocks(ALUMINUM)));
         blocks(BlockTags.NEEDS_IRON_TOOL, join(suffixed(NEEDS_IRON_STORAGE, "_block"), oreBlocks(NEEDS_IRON_METALS)));
         String[] cladding = flat(claddings(), id -> Stream.of(id, id + "_slab"));
-        String[] pickaxe = join(suffixed(IFabBlockNames.STORAGE_METALS, "_block"), oreBlocks(IFabBlockNames.ORE_METALS), cladding, IFabBlockNames.ENGINEERING, frame("steel"), frame("aluminum"), withVariants(IFabBlockNames.CONCRETES), BRICKS, MACHINES);
+        String[] pickaxe = join(suffixed(IFabBlockNames.STORAGE_METALS, "_block"), oreBlocks(IFabBlockNames.ORE_METALS), cladding, IFabBlockNames.ENGINEERING, frame("steel"), frame("aluminum"), withVariants(IFabBlockNames.CONCRETES), BRICKS, suffixed(IFabBlockNames.BRICKS, "_slab"), MACHINES);
         IntrinsicTagAppender<Block> appender = blocks(BlockTags.MINEABLE_WITH_PICKAXE, pickaxe);
         appender.add(IFabMultiblocks.COKE_OVEN.block().get());
         for (String id : IFabBlocks.WIRES.keySet()) { appender.addOptional(ResourceLocation.fromNamespaceAndPath(ImmersiveFabrication.MODID, id)); }
