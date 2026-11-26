@@ -10,6 +10,7 @@ import mctmods.immersivefabrication.client.models.IndustrialPumpModels;
 import mctmods.immersivefabrication.client.renderer.CokeOvenRenderer;
 import mctmods.immersivefabrication.client.renderer.IndustrialPumpRenderer;
 import mctmods.immersivefabrication.common.blocks.metal.structure.StructureType;
+import mctmods.immersivefabrication.core.IFabCommonConfig;
 import mctmods.immersivefabrication.core.registration.IFabBlockEntities;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabMenuTypes;
@@ -40,8 +41,10 @@ public final class IFabClientEvents {
     @SubscribeEvent public static void onRegisterMenuScreens(RegisterMenuScreensEvent event) { event.register(IFabMenuTypes.COKE_OVEN.getType(), CokeOvenScreen::new); }
 
     @SubscribeEvent public static void onRegisterAdditional(ModelEvent.RegisterAdditional event) {
-        SplitModelHandler.register(IFabBlocks.TRANSFORMER.get(), TRANSFORMER_PARTS, Direction.SOUTH);
-        SplitModelHandler.register(IFabBlocks.TRANSFORMER_HV.get(), TRANSFORMER_HV_PARTS, Direction.SOUTH);
+        if (IFabCommonConfig.wires()) {
+            SplitModelHandler.register(IFabBlocks.TRANSFORMER.get(), TRANSFORMER_PARTS, Direction.SOUTH);
+            SplitModelHandler.register(IFabBlocks.TRANSFORMER_HV.get(), TRANSFORMER_HV_PARTS, Direction.SOUTH);
+        }
     }
 
     @SubscribeEvent public static void onRegisterGeometryLoaders(ModelEvent.RegisterGeometryLoaders event) {
