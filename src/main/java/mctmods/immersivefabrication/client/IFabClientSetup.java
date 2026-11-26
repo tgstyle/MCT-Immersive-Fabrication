@@ -13,6 +13,7 @@ import mctmods.immersivefabrication.client.models.IndustrialPumpGeometryLoader;
 import mctmods.immersivefabrication.client.models.IndustrialPumpModels;
 import mctmods.immersivefabrication.client.renderer.CokeOvenRenderer;
 import mctmods.immersivefabrication.client.renderer.IndustrialPumpRenderer;
+import mctmods.immersivefabrication.core.IFabCommonConfig;
 import mctmods.immersivefabrication.core.registration.IFabBlockEntities;
 import mctmods.immersivefabrication.core.registration.IFabBlocks;
 import mctmods.immersivefabrication.core.registration.IFabFluids;
@@ -46,7 +47,7 @@ public final class IFabClientSetup {
     }
 
     @SubscribeEvent public static void onRegisterAdditional(ModelEvent.RegisterAdditional event) {
-        SplitModelHandler.register(IFabBlocks.TRANSFORMER_HV.get(), TRANSFORMER_HV_PARTS, Direction.SOUTH);
+        if (IFabCommonConfig.wires()) { SplitModelHandler.register(IFabBlocks.TRANSFORMER_HV.get(), TRANSFORMER_HV_PARTS, Direction.SOUTH); }
     }
 
     @SubscribeEvent public static void onRegisterGeometryLoaders(ModelEvent.RegisterGeometryLoaders event) {
