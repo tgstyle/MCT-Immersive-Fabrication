@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab_top",
   "render_type": "minecraft:cutout",
   "textures": {
-    "bottom": "immersivefabrication:block/metal/scaffolding_steel_grate_top",
+    "bottom": "immersivefabrication:block/metal/scaffolding_steel",
     "side": "immersivefabrication:block/metal/scaffolding_steel",
     "top": "immersivefabrication:block/metal/scaffolding_steel_grate_top"
   }

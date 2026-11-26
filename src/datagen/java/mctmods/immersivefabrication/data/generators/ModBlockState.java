@@ -61,8 +61,8 @@ public class ModBlockState extends BlockStateProvider {
     private void column(String id, String side, String end) { simpleBlock(block(id), models().cubeColumn(id, tex(side), tex(end))); }
 
     private void slabs(String id, ModelFile base, ResourceLocation side, ResourceLocation end, boolean cutout) {
-        ModelFile bottom = cutout(models().slab(id + "_slab", side, end, end), cutout);
-        ModelFile top = cutout(models().slabTop(id + "_slab_top", side, end, end), cutout);
+        ModelFile bottom = cutout(models().slab(id + "_slab", side, side, end), cutout);
+        ModelFile top = cutout(models().slabTop(id + "_slab_top", side, side, end), cutout);
         slabBlock((SlabBlock) block(id + "_slab"), bottom, top, base);
     }
 
@@ -84,7 +84,7 @@ public class ModBlockState extends BlockStateProvider {
         String id = metal + "_scaffolding_" + type;
         ResourceLocation side = tex("metal/scaffolding_" + metal);
         ResourceLocation end = type.equals("standard") ? side : tex("metal/scaffolding_" + metal + "_" + type);
-        ModelFile base = cutout(models().cubeColumn(id, side, end), true);
+        ModelFile base = cutout(type.equals("standard") ? models().cubeAll(id, side) : models().cubeBottomTop(id, side, side, end), true);
         simpleBlock(block(id), base);
         slabs(id, base, side, end, true);
         stairs(id, side, end, true);
@@ -134,7 +134,7 @@ public class ModBlockState extends BlockStateProvider {
     private void flax() {
         for (FlaxStage stage : FlaxStage.values()) {
             String name = "flax_" + stage.getSerializedName();
-            ModelFile model = models().crop(name, tex("flax/" + stage.getSerializedName()));
+            ModelFile model = cutout(models().crop(name, tex("flax/" + stage.getSerializedName())), true);
             getVariantBuilder(IFabBlocks.FLAX.get()).partialState().with(FlaxBlock.TYPE, stage).modelForState().modelFile(model).addModel();
         }
     }

@@ -1,8 +1,9 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_bottom_top",
   "render_type": "minecraft:cutout",
   "textures": {
-    "end": "immersivefabrication:block/metal/scaffolding_steel_wooden_top",
-    "side": "immersivefabrication:block/metal/scaffolding_steel"
+    "bottom": "immersivefabrication:block/metal/scaffolding_steel",
+    "side": "immersivefabrication:block/metal/scaffolding_steel",
+    "top": "immersivefabrication:block/metal/scaffolding_steel_wooden_top"
   }
 }
